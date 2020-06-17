@@ -74,8 +74,22 @@ h2{
 header{
   display:flex;
   flex-direction:column;
-  align-items:flex-start;
+  align-items:center;
   justify-content:space-between;
+  background-color:#25cfa4;
+  text-align:center;
+  padding:20px;
+}
+
+header h1{
+  color:white;
+  font-size:80px;
+  margin:0;
+}
+
+header p{
+  margin:0;
+  color:#03403c;
 }
 
 .home{
@@ -84,8 +98,12 @@ header{
   overflow:visible;
 }
 
+hr{
+  color:#25cfa4;
+}
+
 nav{
-  text-align:center;
+  text-align:flex-start;
   position:sticky;
   top:0;
 }
