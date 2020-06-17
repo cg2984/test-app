@@ -15,7 +15,7 @@ function Article() {
           <h2> GOALS </h2>
           <p className = "goal">1. To be a better person</p>
           <p className = "goal">2. To ascend to godhood</p>
-        </div>
+      </div>
       <ArticleSection/>
       <ArticleSection/>
       <ArticleSection/>
