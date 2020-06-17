@@ -8,10 +8,6 @@
   flex-direction:row;
 }
 
-body{
-  overflow:visible;
-}
-
 a{
   font-family: 'Poppins', sans-serif;
   font-weight:300;
@@ -25,10 +21,39 @@ a:hover{
   background-color:#25cfa4;
 }
 
+.about{
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  position: sticky;
+  top:24px;
+  width:50%;
+  padding:10px;
+  /*needed to make the thing sticky. I wanted to make the scroll between the projecst and the about sticky and this was the only way to do it*/
+  align-self: flex-start;
+}
+
+body{
+  overflow:visible;
+}
+
+.goals{
+  padding:10px;
+  text-align:left;
+}
+
+.goal{
+  font-size:30px;
+  font-weight:500;
+  color:#25cfa4;
+  line-height:40px;
+}
+
 h1{
   font-family: 'Poppins', sans-serif;
   font-weight:900;
-  font-size: 40px;
+  font-size: 45px;
   color:#25cfa4;
 }
 
@@ -41,9 +66,16 @@ h2{
   background-color:white;
 }
 
-h2:hover{
+.h2_link:hover{
   color:white;
   background-color:#25cfa4;
+}
+
+header{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:space-between;
 }
 
 .home{
@@ -52,19 +84,17 @@ h2:hover{
   overflow:visible;
 }
 
-/*------------------------------HOME PAGE ABOUT STYLING*/
-.about{
-  text-align:left;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  position: sticky;
-  top:0px;
+nav{
+  text-align:center;
+  position:sticky;
+  top:0;
+}
+
+.overview{
   width:50%;
   padding:10px;
-  /*needed to make the thing sticky. I wanted to make the scroll between the projecst and the about sticky and this was the only way to do it*/
-  align-self: flex-start;
 }
+
 
 p{
   font-family: 'Lato', sans-serif;
@@ -77,7 +107,6 @@ p{
 
 /*------------------------------HOME PAGE PROJECT STYLING*/
 .projects_home{
-  margin:20px;
   display:flex;
   flex-direction:column;
   align-items:flex-end;
@@ -86,7 +115,7 @@ p{
 .project-link_home{
   display:flex;
   flex-direction:row;
-  margin:20px 10px;
+  margin:10px;
 }
 
 .project_txt{
@@ -94,7 +123,7 @@ p{
   flex-direction:column;
   justify-content:center;
   align-content:flex-start;
-
+  margin:0;
 }
 
 .project_txt p{
@@ -109,4 +138,30 @@ p{
   width:100%;
   margin:10px 0 8px;
   z-index:-1;
+}
+
+/*---------------------------------Article Section*/
+section{
+  display:flex;
+  flex-direction:row;
+  align-items:flex-start;
+  justify-content:space-between;
+  margin:10px 0px;
+}
+
+section div{
+  width:640px;
+  padding:20px;
+  margin:20px auto;
+}
+
+.section_header{
+  margin:0;
+}
+
+.section_image{
+  object-fit:cover;
+  width:46%;
+  height:46%;
+  margin:10px;
 }
