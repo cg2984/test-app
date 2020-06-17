@@ -1,7 +1,37 @@
-import React from 'react';
-import ArticleSection from "../components/article_section.js"
+import React, {useEffect,useState} from 'react';
+import ArticleSection from "../components/article_section.js";
+import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 function Article() {
+  const [id,setId] = useState("");
+  const [data, setData] = useState([]);
+  let history = useHistory();
+
+  useEffect(() => {
+      let mySearchParams = history.location.search;
+      let urlParams = new URLSearchParams(mySearchParams);
+      //using method get from search params api 
+      let id = urlParams.get('id');
+      //makes sure that tte city exists
+      if(id){
+        setId(id);
+      }
+  },[history]);
+
+  useEffect(() => {
+      axios.get(`https://tranquil-brushlands-15503.herokuapp.com/project/${id}`)
+    .then(function (response) {
+      console.log(response);
+      setData(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  },[id]);
+
+
+
   return (
     <div className="article">
       <nav>

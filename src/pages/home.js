@@ -22,7 +22,7 @@ function Home() {
       <About/>
       <section className = "projects_home">
         {data.map((project, i) => (
-          <ProjectLink projectName = {project.Name} projectDescription = {project.Description}/>
+          <ProjectLink projectName = {project.Name} projectDescription = {project.Description} projectImage = {project.Overview_image} projectId = "recrQE5lxpmzV4bRA"/>
         ))}
       </section>      
     </div>
