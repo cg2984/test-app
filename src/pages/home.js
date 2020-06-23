@@ -4,29 +4,37 @@ import ProjectLink from "../components/project_link.js"
 import axios from 'axios';
 
 function Home() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   //----------------------Getting the data from my backend
   useEffect(() => {
     axios.get('https://tranquil-brushlands-15503.herokuapp.com/')
     .then(function (response) {
-      console.log(response);
-      setData(response.data);
+      console.log("response",response.data);
+      setData(response.data);   
     })
     .catch(function (error) {
       console.log(error);
     });
-  }, []);
-
-  return (
-    <div className="home">
-      <About/>
-      <section className = "projects_home">
-        {data.map((project, i) => (
-          <ProjectLink projectName = {project.Name} projectDescription = {project.Description} projectImage = {project.Overview_image} projectId = "recrQE5lxpmzV4bRA"/>
-        ))}
-      </section>      
-    </div>
-  );
+  }, []);   
+  if(data == null){
+    return(
+        <div> LOADING </div>
+    );     
+  }
+  else{
+       console.log("id", data[0].id);
+       console.log("data", data);
+       return (
+        <div className="home">
+          <About/>
+            <section className = "projects_home">
+              {data.map((project, i) => (
+              <ProjectLink projectName = {data[i].fields.Name} projectDescription = {data[i].fields.Description} projectImage = {data[i].fields.Overview_image} projectId = {data[i].id}/>
+              ))}
+            </section> 
+        </div>
+      ); 
+  }    
 }
 
 export default Home;
