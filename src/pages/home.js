@@ -15,7 +15,8 @@ function Home() {
     .catch(function (error) {
       console.log(error);
     });
-  }, []);   
+  }, []);
+     
   if(data == null){
     return(
         <div> LOADING </div>
@@ -27,11 +28,14 @@ function Home() {
        return (
         <div className="home">
           <About/>
-            <section className = "projects_home">
+          <section className = "projects_home">
               {data.map((project, i) => (
-              <ProjectLink projectName = {data[i].fields.Name} projectDescription = {data[i].fields.Description} projectImage = {data[i].fields.Overview_image} projectId = {data[i].id}/>
+              <ProjectLink projectName = {data[i].name} projectDescription = {data[i].description} projectImage = {data[i].image} projectId = {data[i].id}/>
               ))}
-            </section> 
+          </section> 
+          <footer>
+            <p> Have questions? Email me at clara.c.gilligan@gmail.com</p>
+          </footer>
         </div>
       ); 
   }    

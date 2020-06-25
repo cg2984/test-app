@@ -25,14 +25,17 @@ function Article() {
   useEffect(() => {
       axios.get(Api)
     .then(function (response) {
-      setData(response.data.fields);
+      console.log("response",response);
+      setData(response.data);
     })
     .catch(function (error) {
       console.log(error);
     });
   },[id]);
  
- console.log("data",data);
+ console.log("data", data);
+ console.log("text", data.Description);
+
 
   return (
     <div className="article">
@@ -40,15 +43,21 @@ function Article() {
         <a href="/"><h2 className = "h2_link">HOME</h2></a>
       </nav>
       <header className = "project_statement">
-        <h1> {data.Name} </h1>
+        <h1>{data.Name}</h1>
         <p className = "overview">{data.Overview}</p>
       </header>
       <div className = "goals">
           <h2> GOALS </h2>
-          <p className = "goal">1. To be a better person</p>
-          <p className = "goal">2. To ascend to godhood</p>
+          <p className = "goal">{data.Goal1}</p>
+          <p className = "goal">{data.Goal2}</p>
+          <p className = "goal">{data.Goal3}</p>
       </div>
-      <ArticleSection/>
+      <h2>Sketching & Research</h2>
+      <ArticleSection sectionText = {data.Sketching_Research} sectionImageOne = {data.Sketch_Image_1} sectionImageTwo = {data.Sketch_Image_2}/>
+      <h2>Prototyping</h2>
+      <ArticleSection sectionText = {data.Prototyping} sectionImageOne = {data.Prototyping_Image_1} sectionImageTwo = {data.Prototyping_Image_2}/>
+      <h2>Finalizing</h2>
+      <ArticleSection sectionText = {data.Finishing_Touches} sectionImageOne = {data.Finishing_Image_1} sectionImageTwo = {data.Finishing_Image_2}/>
     </div>
   );
 }
