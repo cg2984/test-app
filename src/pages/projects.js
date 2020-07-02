@@ -28,14 +28,13 @@ function Home() {
        return (
         <div className="home">
           <About/>
-          <section id = "projects" className = "projects_home">
+          <section className = "projects_home">
               {data.map((project, i) => (
               <ProjectLink projectName = {data[i].name} projectDescription = {data[i].description} projectImage = {data[i].image} projectId = {data[i].id}/>
               ))}
           </section> 
           <footer>
-            <p> Website built by me!</p>
-            <p> Icons from FontAwesome</p>
+            <p> Have questions? Email me at clara.c.gilligan@gmail.com</p>
           </footer>
         </div>
       ); 

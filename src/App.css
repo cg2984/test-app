@@ -1,15 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@300;500;700;900&display=swap');
-.App {
-  text-align: left;
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Poppins:wght@700;800;900&display=swap');
+.App{
   margin:0 auto;
   max-width:1080px;
-  overflow:visible;
-  display:flex;
-  flex-direction:row;
 }
-
 a{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-weight:300;
   color: #25cfa4;
   text-decoration: none;
@@ -21,61 +16,16 @@ a:hover{
   background-color:#25cfa4;
 }
 
-.about{
-  text-align:center;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  position: static;
-  top:0px;
-  width:100%;
-  padding:20px;
-  /*needed to make the thing sticky. I wanted to make the scroll between the projecst and the about sticky and this was the only way to do it*/
-  /*align-self: flex-start;*/
-  z-index:2;
-  background-color:white;
-  margin:0 auto;
-}
-
-.about p{
-  margin:0;
-}
-
-.about h1{
-  margin:20px 0 0 0;
-}
-
-
-.about_list{
-  margin:0;
-  padding:0;
-  display:flex;
-  flex-direction:row;
-}
-
-.about_list li{
-  display:flex;
-  flex-direction:row;
-  align-items:center;
-  margin:10px 0;
-}
-
-.about_list li p{
-  margin:0 10px;
-}
-
-body{
-  overflow:visible;
-}
-
 .goals{
   padding:10px;
   text-align:left;
 }
 
 footer{
-  margin:50px;
+  margin:50px auto;
   text-align:center;
+  display:flex;
+  flex-direction:column;
 }
 
 .goal{
@@ -93,39 +43,14 @@ h1{
 }
 
 h2{
+  color:black;
+  font-weight:bold;
   font-size: 35px;
-  color:#25cfa4;
   font-family: 'Poppins', sans-serif;
-  font-weight:500;
+  font-weight:700;
   margin:10px 0;
-  background-color:white;
 }
 
-.h2_link:hover{
-  color:white;
-  background-color:#25cfa4;
-}
-
-header{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:space-between;
-  background-color:#25cfa4;
-  text-align:center;
-  padding:20px;
-}
-
-header h1{
-  color:white;
-  font-size:80px;
-  margin:0;
-}
-
-header p{
-  margin:0;
-  color:#03403c;
-}
 
 .home{
   display:flex;
@@ -134,9 +59,7 @@ header p{
   margin:0 auto;
 }
 
-hr{
-  color:#25cfa4;
-}
+
 
 nav{
   text-align:flex-start;
@@ -144,16 +67,10 @@ nav{
   top:0;
 }
 
-.overview{
-  width:50%;
-  padding:10px;
-}
-
-
 p{
-  font-family: 'Lato', sans-serif;
-  font-weight:300;
-  font-size: 15px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight:500;
+  font-size: 20px;
   padding:0;
   margin:0px;
   line-height:30px;
@@ -161,82 +78,16 @@ p{
 
 /*------------------------------HOME PAGE PROJECT STYLING*/
 .projects_home{
-  display:grid;
-  grid-template-rows: auto auto;
-  grid-template-columns: 350px 350px 350px; 
-  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
 }
 
 .project-link_home{
   display:flex;
   flex-direction:column;
-  margin:0px;
-}
-.project_txt{
-  background-color:white;
-  padding:5px;
-  margin:0;
-  /* ONLY IF WANT TO OVERLAP WITH IMAGE margin:50px 20px 100px -150px;*/
-  z-index:1;
-}
-
-.project_pic{
-  object-fit:cover;
-  height:300px;
-  width:300px;
-  margin:10px 0 8px;
- 
-  z-index:0;
-}
-
-/*---------------------------------Article Section*/
-section{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  justify-content:space-between;
-  margin:0px;
-}
-
-section p{
-  font-size:18px;
-  line-height:30px;
-  text-align:left;
-
-}
-
-.section_text{
-  max-width:600px;
-  /*needed for spacing in the airtable to show up in the react app*/
-  white-space: pre-line;
-}
-
-.section_one{
-  display:flex;
-  flex-direction:row;
-  align-items:flex-start;
-}
-
-.section_big_image{
-  width:80%;
-  height:80%;
-  object-fit:cover;
+  align-items:center;
   margin:0 auto;
 }
 
-section div{
-  padding:20px;
-  margin:20px auto;
-}
-
-.section_header{
-  margin:0;
-}
-
-.section_image{
-  object-fit:cover;
-  width:50%;
-  height:50%;
-  margin:0 30px;
-}
 

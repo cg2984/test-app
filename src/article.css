@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Poppins:wght@700;800;900&display=swap');
+.article{
+	max-width:1080px;
+	margin:0 auto;
+}
+
+.article h1{
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 55px;
+	line-height: 80px;
+	text-align: left;
+	color:black;
+	margin:0 30px;
+}
+.article p{
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 36px;
+}
+
+section{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:space-between;
+  margin:0px;
+}
+
+.article_text{
+  /*needed for spacing in the airtable to show up in the react app*/
+  white-space: pre-line;
+  margin:0 30px 10px 30px;
+}
+
+.article_image_1{
+  height:100%;
+  width:1080px;
+  object-fit:cover;
+  margin:50px auto;
+}
+
+.article_image_2{
+  height:500px;
+  width:1080px;
+  object-fit:cover;
+  margin:50px auto;
+}
+
+.article_header{
+	margin:70px 0 20px 0;
+}
+
+.button{
+  margin:30px auto; 
+  width:50px;
+  height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.button:hover{
+	background-color:#25cfa4;
+}
+
+.button_link{
+	font-family: 'Poppins', sans-serif;
+	padding:10px;
+}
+
+section div{
+  padding:20px;
+  margin:20px auto;
+  background-color:;
+}
+
+.goals{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+.goal_img{
+	z-index:-1;
+	object-fit:cover;
+	height:300px;
+	width:600px;
+}
+.goal_text{
+	z-index:0;
+	margin:20px 0;
+}
+
+header{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	height:35vh;
+	margin:100px auto;
+}
+
+header h1{
+  	font-family: 'IBM Plex Sans', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 64px;
+	line-height: 96px;
+	text-align: center;
+	color:black;
+	margin:15px;
+}
+
+header hr{
+  border:5px solid #25cfa4;
+  width:100%;
+  margin:15px 0;
+}
+
+.overview{
+	white-space: pre-line;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 36px;
+	text-align: center;
+	width:100%;
+	margin:0 auto;
+}
