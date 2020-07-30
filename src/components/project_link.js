@@ -2,12 +2,11 @@ import React from 'react';
 
 function ProjectLink({projectName, projectDescription, projectImage, projectId}) {
   const style = {
-    backgroundImage: ` linear-gradient(180deg, rgba(37, 207, 164, 0.25) 0%, rgba(0, 10, 255, 0.25) 100%), url(${projectImage})`,
+    backgroundImage: `linear-gradient(180deg, rgba(21, 33, 207, 0.25) 0%, rgba(36, 200, 255, 0.25) 100%), url(${projectImage})`,
     backgroundSize: `450px`,
-    backgroundColor: `#25cfa4`,
     margin: `5px`,
-    width:`300px`,
-    height: `300px`,
+    width:`100%`,
+    height: `100%`,
     border: `5px solid #000000`
   };
   return (

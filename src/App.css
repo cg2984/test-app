@@ -6,14 +6,14 @@
 a{
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight:300;
-  color: #25cfa4;
+  color: #1521cf;
   text-decoration: none;
   font-size: 20px;
 }
 
 a:hover{
   color:#ffffff;
-  background-color:#25cfa4;
+  background-color:#1521cf;
 }
 
 .goals{
@@ -31,7 +31,7 @@ footer{
 .goal{
   font-size:30px;
   font-weight:500;
-  color:#25cfa4;
+  color:#1521cf;
   line-height:40px;
 }
 
@@ -39,7 +39,7 @@ h1{
   font-family: 'Poppins', sans-serif;
   font-weight:900;
   font-size: 45px;
-  color:#25cfa4;
+  color:#1521cf;
 }
 
 h2{
@@ -51,6 +51,9 @@ h2{
   margin:10px 0;
 }
 
+.h2_link:hover{
+  color:white;
+}
 
 .home{
   display:flex;
@@ -58,8 +61,6 @@ h2{
   overflow:visible;
   margin:0 auto;
 }
-
-
 
 nav{
   text-align:flex-start;
@@ -77,17 +78,20 @@ p{
 }
 
 /*------------------------------HOME PAGE PROJECT STYLING*/
+
 .projects_home{
   display:flex;
   flex-direction:column;
-  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  margin:20px;
 }
 
 .project-link_home{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  margin:0 auto;
+  text-align:center;
+  width:100%;
+  height:300px;
+  margin:0 20px;
 }
 
 

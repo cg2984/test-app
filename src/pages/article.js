@@ -15,6 +15,7 @@ import Button from "../components/button.js"
 
 function Article() {
   const [data, setData] = useState([]);
+  const [links, setLinks] = useState({});
   let id = ""; 
   let UrlId = "";
   
@@ -60,14 +61,9 @@ function Article() {
       <h1 className = "section_header">Sketching & Research</h1>
       <ArticleSection className = "article_section" sectionText = {data.Sketching_Research} sectionImageOne = {data.Sketch_Image_1} sectionImageTwo = {data.Sketch_Image_2} sectionImageThree = {data.Sketch_Image_1} sectionImageFour = {data.Sketch_Image_2}/>
       <h1 className = "section_header">Prototyping</h1>
-      <ArticleSection className = "article_section" sectionText = {data.Sketching_Research} sectionImageOne = {data.Sketch_Image_1} sectionImageTwo = {data.Sketch_Image_2} sectionImageThree = {data.Sketch_Image_1} sectionImageFour = {data.Sketch_Image_2}/>
+      <ArticleSection className = "article_section" sectionText = {data.Prototyping} sectionImageOne = {data.Prototyping_Image_1} sectionImageTwo = {data.Prototyping_Image_2} sectionImageThree = {data.Prototyping_Image_1} sectionImageFour = {data.Prototyping_Image_1}/>
       <h1 className = "section_header">Finalizing</h1>
-      <ArticleSection className = "article_section" sectionText = {data.Sketching_Research} sectionImageOne = {data.Sketch_Image_1} sectionImageTwo = {data.Sketch_Image_2} sectionImageThree = {data.Sketch_Image_1} sectionImageFour = {data.Sketch_Image_2}/>
-      <footer>
-        <ProjectLink projectName = "test" projectDescription = 'test' projectImage = "test" projectId = "test"/>
-        <ProjectLink projectName = "test" projectDescription = 'test' projectImage = "test" projectId = "test"/>
-        <ProjectLink projectName = "test" projectDescription = 'test' projectImage = "test" projectId = "test"/>
-      </footer>
+      <ArticleSection className = "article_section" sectionText = {data.Final} sectionImageOne = {data.Final_Image_1} sectionImageTwo = {data.Final_Image_2} sectionImageThree = {data.Final_Image_2} sectionImageFour = {data.Final_Image_2}/>
     </div>
   );
 }

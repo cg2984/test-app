@@ -15,7 +15,7 @@
 	font-size: 55px;
 	line-height: 80px;
 	text-align: left;
-	color:black;
+	color:#1521cf;
 }
 .article p{
 	font-family: 'IBM Plex Sans', sans-serif;
@@ -33,7 +33,7 @@
 .article_text{
   /*needed for spacing in the airtable to show up in the react app*/
   white-space: pre-line;
-  margin:0 auto;
+  margin:20px 100px;
   max-width:50%;
 }
 
@@ -51,11 +51,20 @@
   margin:0 auto;
 }
 
+.article_image_small{
+	max-width:100%;
+	height:50%;
+	max-height:600px;
+	object-fit:cover;
+	margin:0;
+	padding:10px;
+}
+
 .section_header{
 	margin:70px 0 20px 0;
 }
 
-section{
+.articleSection{
   display:flex;
   flex-direction:column;
   align-items:flex-start;
@@ -64,16 +73,20 @@ section{
 }
 
 .button{
-  margin:30px auto; 
-  width:50px;
+  padding:30px auto; 
+  width:100%;
   height:50px;
   display:flex;
   align-items:center;
   justify-content:center;
+  top:0;
+  position:sticky;
+  background-color:white;
+
 }
 
 .button:hover{
-	background-color:#25cfa4;
+	background-color:#1521cf;
 }
 
 .button_link{
@@ -94,8 +107,8 @@ section{
 	height:300px;
 	width:100%;
 }
+
 .goal_text{
-	z-index:0;
 	margin:10px 0;
 }
 
@@ -109,6 +122,14 @@ section{
 	padding:0px;
 }
 
+.image_wrapper_inner{
+	display:flex;
+	flex-direction:column;
+	justify-content:space-around;
+	margin:0;
+	padding:0;
+}
+
 .project_header{
 	display:flex;
 	flex-direction:column;
@@ -116,25 +137,19 @@ section{
 	justify-content:center;
 	margin:50px auto;
 	padding:125px;
-	background-color:#25cfa4;
+	background-color:#1521cf;
 }
 
 .project_header h1{
 	font-style: normal;
 	font-weight: 800;
 	font-size: 64px;
-	color:black;
+	color:white;
 	margin:15px;
 }
 
 .project_header p{
-	color:black;
-}
-
-.project_header hr{
-  border:5px solid #25cfa4;
-  width:100%;
-  margin:15px 0;
+	color:white;
 }
 
 section div{
@@ -142,3 +157,11 @@ section div{
   margin:20px auto;
   background-color:;
 }
+
+.text_image_wrapper{
+	display:flex;
+	flex-direction:row;
+	align-items:space-between;
+	justify-content:center;
+}
+
