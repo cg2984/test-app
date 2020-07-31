@@ -23,8 +23,6 @@ function Home() {
     );     
   }
   else{
-       console.log("id", data[0].id);
-       console.log("data", data);
        return (
         <div className="home">
           <About/>

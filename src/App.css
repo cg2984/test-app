@@ -51,10 +51,6 @@ h2{
   margin:10px 0;
 }
 
-.h2_link:hover{
-  color:white;
-}
-
 .home{
   display:flex;
   flex-direction:column;
@@ -88,10 +84,36 @@ p{
 }
 
 .project-link_home{
-  text-align:center;
-  width:100%;
-  height:300px;
-  margin:0 20px;
+  overflow:hidden;
+  text-align:left;
+  width:80%;
+  height:400px;
+  margin:20px;
+  border: 5px solid #000000;
+  padding:0px;
 }
 
+.project_img{
+  object-fit:cover;
+  width:100%;
+  height:100%;
+  margin:10px 0 0 0;
+}
+
+.project_description{
+  padding:0 10px;
+}
+
+.project_name{
+  color:#1521cf;
+  margin:10px 0;
+  border-bottom: #FFF solid 4px;
+  padding:5px 10px;
+}
+
+.project_name:hover{
+  color:#1521cf;
+  margin:10px 0;
+  border-bottom: #1521cf solid 4px;
+}
 
