@@ -10,6 +10,7 @@ import {
   useParams
 } from "react-router-dom";
 
+
 import "../article.css"
 import Button from "../components/button.js"
 
@@ -56,14 +57,14 @@ function Article() {
             <h2>{data.Goal2}</h2>
             <h2>{data.Goal3}</h2>
           </div>
-          <img className = "goal_img" src= "https://dl.airtable.com/.attachmentThumbnails/99b288869545808aa91226b722f1b365/7ce33f8d"/>
+          <img className = "goal_img" src= {data.Overview_Image}/>
       </div>
       <h1 className = "section_header">Sketching & Research</h1>
-      <ArticleSection className = "article_section" sectionText = {data.Sketching_Research} sectionImageOne = {data.Sketch_Image_1} sectionImageTwo = {data.Sketch_Image_2} sectionImageThree = {data.Sketch_Image_1} sectionImageFour = {data.Sketch_Image_2}/>
+      <ArticleSection className = "article_section" sectionText = {data.Sketching_Research} sectionImageOne = {data.Sketch_Image_1} sectionImageTwo = {data.Sketch_Image_2} sectionImageThree = {data.Sketch_Image_3} sectionImageFour = {data.Sketch_Image_4}/>
       <h1 className = "section_header">Prototyping</h1>
-      <ArticleSection className = "article_section" sectionText = {data.Prototyping} sectionImageOne = {data.Prototyping_Image_1} sectionImageTwo = {data.Prototyping_Image_2} sectionImageThree = {data.Prototyping_Image_1} sectionImageFour = {data.Prototyping_Image_1}/>
+      <ArticleSection className = "article_section" sectionText = {data.Prototyping} sectionImageOne = {data.Prototyping_Image_1} sectionImageTwo = {data.Prototyping_Image_2} sectionImageThree = {data.Prototype_Image_3} sectionImageFour = {data.Prototype_Image_4}/>
       <h1 className = "section_header">Finalizing</h1>
-      <ArticleSection className = "article_section" sectionText = {data.Final} sectionImageOne = {data.Final_Image_1} sectionImageTwo = {data.Final_Image_2} sectionImageThree = {data.Final_Image_2} sectionImageFour = {data.Final_Image_2}/>
+      <ArticleSection className = "article_section" sectionText = {data.Final} sectionImageOne = {data.Final_Image_1} sectionImageTwo = {data.Final_Image_2} sectionImageThree = {data.Final_Image_3} sectionImageFour = {data.Final_Image_4}/>
     </div>
   );
 }
