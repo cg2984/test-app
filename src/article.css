@@ -124,10 +124,17 @@
 
 .image_wrapper_inner{
 	display:flex;
-	flex-direction:column;
-	justify-content:space-around;
+	flex-direction:row;
+	justify-content:center;
 	margin:0;
 	padding:0;
+}
+
+.image_wrapper_inner img{
+	object-fit:cover;
+	width:50%;
+	height:50%;
+	margin:10px;
 }
 
 .modal{
@@ -171,7 +178,7 @@ section div{
 
 .text_image_wrapper{
 	display:flex;
-	flex-direction:row;
+	flex-direction:column;
 	align-items:space-between;
 	justify-content:center;
 }
