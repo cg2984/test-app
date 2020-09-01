@@ -6,6 +6,7 @@
 	flex-direction:column;
 	align-items:center;
 	justify-content:center;
+	overflow-x:hidden;
 }
 
 .article h1{
@@ -33,43 +34,34 @@
 .article_text{
   /*needed for spacing in the airtable to show up in the react app*/
   white-space: pre-line;
-  margin:20px 100px;
-  max-width:50%;
+  margin:20px auto;
+  max-width:640px;
 }
 
-.article_image_1{
+.article_image_main{
   height:100%;
   width:100%;
   object-fit:cover;
-  margin:25px auto;
-}
-
-.article_image_2{
-  height:100%;
-  width:100%;
-  object-fit:cover;
-  margin:0 auto;
+  margin:10px 0;
 }
 
 .article_image_small{
-	max-width:100%;
-	height:50%;
-	max-height:600px;
+	width:48%;
+	height:48%;
 	object-fit:cover;
-	margin:0;
-	padding:10px;
+	margin:10px 0;
 }
 
 .section_header{
-	margin:70px 0 20px 0;
+	margin:70px 20px 0px 20px;
 }
 
 .articleSection{
   display:flex;
   flex-direction:column;
-  align-items:flex-start;
-  justify-content:space-between;
-  margin:0px;
+  align-items:center;
+  justify-content:center;
+  margin:0 10%;
 }
 
 .button{
@@ -98,7 +90,7 @@
 	display:flex;
 	flex-direction:column;
 	align-items:center;
-	margin:0;
+	margin:25px;
 	padding:0;
 }
 .goal_img{
@@ -118,23 +110,19 @@
 }
 
 .image_wrapper{
-	margin:0px;
 	padding:0px;
+	justify-content:center;
+	align-items:center;
+	margin:0;
 }
 
 .image_wrapper_inner{
 	display:flex;
 	flex-direction:row;
-	justify-content:center;
+	justify-content:space-between;
+	align-items:center;
 	margin:0;
 	padding:0;
-}
-
-.image_wrapper_inner img{
-	object-fit:cover;
-	width:50%;
-	height:50%;
-	margin:10px;
 }
 
 .modal{
@@ -154,8 +142,9 @@
 	align-items:center;
 	justify-content:center;
 	margin:50px auto;
-	padding:125px;
+	padding:20px;
 	background-color:#1521cf;
+	width:100%;
 }
 
 .project_header h1{
@@ -163,11 +152,12 @@
 	font-weight: 800;
 	font-size: 64px;
 	color:white;
-	margin:15px;
+	margin:20px;
 }
 
 .project_header p{
 	color:white;
+	margin:100px;
 }
 
 section div{
@@ -181,5 +171,7 @@ section div{
 	flex-direction:column;
 	align-items:space-between;
 	justify-content:center;
+	padding:0;
+	margin:0;
 }
 

@@ -26,10 +26,9 @@ function ArticleSection({sectionText, sectionImageOne, sectionImageTwo, sectionI
         <img onClick={closeModal} className = "article_image_small" src = {sectionImageThree} width="1080" height="1080"/>
         <button onClick={closeModal}>X</button>
         </Modal>
-
     	<div className = "image_wrapper">  
-        	<img className = "article_image_2" src = {sectionImageTwo} width="1080" height="1080"/>
-        	<img className = "article_image_1" src = {sectionImageOne} width="1080" height="1080"/>
+        	<img className = "article_image_main" src = {sectionImageTwo} width="1080" height="1080"/>
+        	<img className = "article_image_main" src = {sectionImageOne} width="1080" height="1080"/>
     	</div>
     	<div className = "text_image_wrapper">
                 <div className = "image_wrapper_inner">
