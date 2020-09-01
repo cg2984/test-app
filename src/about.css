@@ -5,20 +5,19 @@
   flex-direction:column;
   justify-content:space-around;
   height:100vh;
-  margin:0 30px;
+  margin:30px;
   align-items:center;
+  padding:20px;
+  margin:10px;
 }
 
 .about_text{
   text-align:center;
   display:flex;
   flex-direction:column;
-  position: static;
   align-items:center;
   justify-content:center;
-  top:0px;
-  width:100%;
-  padding:20px;
+  padding:20px auto;
   /*needed to make the thing sticky. I wanted to make the scroll between the projecst and the about sticky and this was the only way to do it*/
   /*align-self: flex-start;*/
 }
@@ -38,8 +37,8 @@
   margin:20px;
 }
 
-.about h1{
-  margin:2px auto;
+.about_text h1{
+  margin:10px;
   font-size: 64px;
   color:black;
 }

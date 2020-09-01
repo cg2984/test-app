@@ -57,7 +57,6 @@ function Article() {
             <h2>{data.Goal2}</h2>
             <h2>{data.Goal3}</h2>
           </div>
-          <img className = "goal_img" src= {data.Overview_Image}/>
       </div>
       <h1 className = "section_header">Sketching & Research</h1>
       <ArticleSection className = "article_section" sectionText = {data.Sketching_Research} sectionImageOne = {data.Sketch_Image_1} sectionImageTwo = {data.Sketch_Image_2} sectionImageThree = {data.Sketch_Image_3} sectionImageFour = {data.Sketch_Image_4}/>
