@@ -16,15 +16,9 @@ a{
   font-size: 20px;
 }
 
-a:hover{
-  color:#ffffff;
-  background-color:#1521cf;
-}
-
 button{
   background-color:white;
   border:none;
-  
 }
 
 .goals{

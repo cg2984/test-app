@@ -36,10 +36,10 @@ function Home() {
           
           <About/>
           <section id = "projects" className = "projects_home">
-              <nav className = "project_nav">
+              {/*<nav className = "project_nav">
                 <button onClick={() => setUrlParam("")}><h2 className = "project_name"> Case Studies </h2></button>
                 <button onClick={() => setUrlParam("mini")}><h2 className = "project_name"> Mini Projects </h2></button>
-              </nav>
+              </nav>*/}
               {data.map((project, i) => (
               <ProjectLink projectName = {data[i].name} projectDescription = {data[i].description} projectImage = {data[i].image} projectId = {data[i].id}/>
               ))}

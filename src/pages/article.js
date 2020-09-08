@@ -43,7 +43,7 @@ function Article() {
 
   return (
     <div className="article">  
-      <Button className = "about_button" Link="/" Name="Back"/>
+      <Button Link="/" Name="Back"/>
       <header className = "project_header">
         <h1>{data.Name}</h1>
         <p>{data.Overview}</p>
