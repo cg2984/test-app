@@ -1,17 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Poppins:wght@700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 .about{
   text-align:center;
   display:flex;
   flex-direction:column;
   justify-content:space-around;
   height:100vh;
-  margin:30px;
+  margin:0 30px;
   align-items:center;
-  padding:20px;
-  margin:10px;
+  padding:0 20px;
+  max-width:30%;
+  align-self: flex-start;
+  position:sticky;
+  top:10px;
 }
 
 .about_text{
+  position:sticky;
   text-align:center;
   display:flex;
   flex-direction:column;
@@ -19,7 +23,7 @@
   justify-content:center;
   padding:20px auto;
   /*needed to make the thing sticky. I wanted to make the scroll between the projecst and the about sticky and this was the only way to do it*/
-  /*align-self: flex-start;*/
+  
 }
 
 .about a{
@@ -27,9 +31,8 @@
 }
 
 .about p{
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-style: normal;
-  font-weight: normal;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
   font-size: 24px;
   line-height: 36px;
   text-align: center;

@@ -24,7 +24,7 @@ function App() {
 
   //const idFromTitle = title.replace(/\s+/g,"-").toLowerCase();
 
-  	return (
+  	return ( 
     	<div className="App">
     		<Router>
     			<Route exact path="/:id">

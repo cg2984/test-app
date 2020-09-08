@@ -9,8 +9,6 @@ import {
   Route,
   useParams
 } from "react-router-dom";
-
-
 import "../article.css"
 import Button from "../components/button.js"
 

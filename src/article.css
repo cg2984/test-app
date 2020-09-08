@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Poppins:wght@700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 .article{
 	max-width:1920px;
 	margin:0 auto;
@@ -10,16 +10,16 @@
 }
 
 .article h1{
-	font-family: 'Poppins', sans-serif;
+	font-family: 'DM Sans', sans-serif;
 	font-style: normal;
-	font-weight: 800;
+	font-weight: 700;
 	font-size: 55px;
 	line-height: 80px;
 	text-align: left;
 	color:#1521cf;
 }
 .article p{
-	font-family: 'IBM Plex Sans', sans-serif;
+	font-family: 'DM Sans', sans-serif;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 24px;
@@ -82,7 +82,7 @@
 }
 
 .button_link{
-	font-family: 'Poppins', sans-serif;
+	font-family: 'DM Sans', sans-serif;
 	padding:10px;
 }
 
