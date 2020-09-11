@@ -12,18 +12,8 @@ import {
 } from "react-router-dom";
 
 function App() {
-	//----------------------Getting the data from my backend
-	axios.get('https://tranquil-brushlands-15503.herokuapp.com/')
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-
 
   //const idFromTitle = title.replace(/\s+/g,"-").toLowerCase();
-
   	return ( 
     	<div className="App">
     		<Router>

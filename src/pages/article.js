@@ -14,31 +14,40 @@ import Button from "../components/button.js"
 
 function Article() {
   const [data, setData] = useState([]);
+  const [projects, setProjects] = useState([]);
   const [links, setLinks] = useState({});
   let id = ""; 
   let UrlId = "";
   
   UrlId = useParams();
   id = UrlId.id;
-  console.log("id",id);
-  let Api = "https://tranquil-brushlands-15503.herokuapp.com/project/" + id;
-  console.log("API", Api); 
+  let project_data = "https://tranquil-brushlands-15503.herokuapp.com/project/" + id;
+  let next_projects = "https://tranquil-brushlands-15503.herokuapp.com"
   
     
-    
+  //getting the data for this project  
   useEffect(() => {
-      axios.get(Api)
+      axios.get(project_data)
     .then(function (response) {
-      console.log("response",response);
+      console.log("data response",response);
       setData(response.data);
     })
     .catch(function (error) {
       console.log(error);
     });
   },[id]);
- 
- console.log("data", data);
- console.log("text", data.Description);
+
+  //getting the data for the other projects in the footer
+  useEffect(() => {
+      axios.get(next_projects)
+    .then(function (response) {
+      console.log("projects response",response)
+      setProjects(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  },[]);
 
 
   return (
@@ -63,6 +72,11 @@ function Article() {
       <h1 className = "section_header">Finalizing</h1>
       <ArticleSection className = "article_section" sectionText = {data.Final} sectionImageOne = {data.Final_Image_1} sectionImageTwo = {data.Final_Image_2} sectionImageThree = {data.Final_Image_3} sectionImageFour = {data.Final_Image_4}/>
     </div>
+    <footer className = "article_footer">
+      {projects.map((item, i) => (
+        <a href = "https://www.petfinder.com/dog-breeds/">{projects[i].name}</a>
+      ))}
+    </footer>
   );
 }
 

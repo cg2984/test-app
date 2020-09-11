@@ -5,7 +5,6 @@ import axios from 'axios';
 
 function Home() {
   const [data, setData] = useState(null);
-  const [dummyData, setDummyData] = useState(null);
   const [urlParam, setUrlParam] = useState("");
   var url = `https://tranquil-brushlands-15503.herokuapp.com/${urlParam}`
 
@@ -13,7 +12,6 @@ function Home() {
   useEffect(() => {
     axios.get(url)
     .then(function (response) {
-      console.log("response",response.data);
       setData(response.data);   
     })
     .catch(function (error) {
@@ -21,8 +19,6 @@ function Home() {
     });
   }, [urlParam]);
 
-
-  
   //making sure that the data is loaded. might be more elegant solution but I dont know it sorry. i have stuck it in issues in github
   if(data == null){
     return(
@@ -33,14 +29,13 @@ function Home() {
   else{
        return (
         <div className="home">
-          
           <About/>
           <section id = "projects" className = "projects_home">
               {/*<nav className = "project_nav">
                 <button onClick={() => setUrlParam("")}><h2 className = "project_name"> Case Studies </h2></button>
                 <button onClick={() => setUrlParam("mini")}><h2 className = "project_name"> Mini Projects </h2></button>
               </nav>*/}
-              {data.map((project, i) => (
+              {data.map((item, i) => (
               <ProjectLink projectName = {data[i].name} projectDescription = {data[i].description} projectImage = {data[i].image} projectId = {data[i].id}/>
               ))}
           </section> 
