@@ -14,11 +14,25 @@ a{
   color: #1521cf;
   text-decoration: none;
   font-size: 20px;
+  padding:5px;
+}
+
+a:hover{
+  background-color:#1521cf;
+  color:white;
+  padding:5px;
 }
 
 button{
   background-color:white;
   border:none;
+}
+
+.button_link{
+}
+
+.button_link:hover{
+  border-bottom: #1521cf dashed 4px;
 }
 
 .goals{

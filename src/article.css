@@ -28,7 +28,7 @@
 
 .article footer{
 	display:flex;
-	flex-direction:row;
+	flex-direction:column;
 }
 
 .article_text{
@@ -143,6 +143,15 @@
 .modal img{
 	height:100%;
 	width:100%;
+}
+
+.next_projects{
+	display:flex;
+	flex-direction:row;
+}
+
+.next_projects a{
+	margin:10px;
 }
 
 .project_header{
