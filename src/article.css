@@ -177,6 +177,11 @@
 	margin:50px 20%;
 }
 
+.reflection p{
+	margin:20px auto;
+	max-width:640px;
+}
+
 section div{
   padding:20px;
   margin:20px auto;

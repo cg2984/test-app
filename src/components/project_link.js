@@ -11,7 +11,7 @@ function ProjectLink({projectName, projectDescription, projectImage, projectId})
   };
   return (
     <div className = "project-link_home">
-      <a href = {projectId}><h2 className = "project_name">{projectName}</h2></a>
+      <a className = "project_name" href = {projectId}>{projectName}</a>
       <p className = "project_description">{projectDescription}</p>
       <img src = {projectImage} className = "project_img"/>             	
     </div>

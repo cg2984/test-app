@@ -71,6 +71,10 @@ function Article() {
       <ArticleSection className = "article_section" sectionText = {data.Prototyping} sectionImageOne = {data.Prototyping_Image_1} sectionImageTwo = {data.Prototyping_Image_2} sectionImageThree = {data.Prototype_Image_3} sectionImageFour = {data.Prototype_Image_4}/>
       <h1 className = "section_header">Finalizing</h1>
       <ArticleSection className = "article_section" sectionText = {data.Final} sectionImageOne = {data.Final_Image_1} sectionImageTwo = {data.Final_Image_2} sectionImageThree = {data.Final_Image_3} sectionImageFour = {data.Final_Image_4}/>
+      <h1 className = "section_header">Reflection</h1>
+      <section className = "reflection">
+        <p>{data.Reflection}</p>
+      </section>
       <footer className = "article_footer">
         <h2>See another project</h2>
         <div className = "next_projects">
