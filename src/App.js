@@ -1,6 +1,7 @@
 import React from 'react';
-import Home from "./pages/home.js"
-import Article from "./pages/article.js"
+import Home from "./pages/home.js";
+import Article from "./pages/article.js";
+import MiniArticle from "./pages/mini_article.js";
 import logo from './logo.svg';
 import './App.css';
 import axios from "axios";
@@ -12,18 +13,20 @@ import {
 } from "react-router-dom";
 
 function App() {
-
   //const idFromTitle = title.replace(/\s+/g,"-").toLowerCase();
   	return ( 
     	<div className="App">
     		<Router>
-    			<Route exact path="/:id">
-      				<Article/>
-      			</Route>
-      			<Route exact path="/">
-      				<Home/>
-      			</Route>
-      		</Router>
+    	    <Route exact path="/project/:id">
+      	    <Article/>
+      		</Route>
+      		<Route exact path="/">
+      			<Home/>
+      		</Route>
+          <Route exact path="/miniproject/:id">
+            <MiniArticle/>
+          </Route>
+      	</Router>
     	</div>
   	);
 }

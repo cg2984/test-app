@@ -16,6 +16,11 @@ function Article() {
   const [data, setData] = useState([]);
   const [projects, setProjects] = useState([]);
   const [links, setLinks] = useState({});
+  const [style, setStyle] = useState({
+    display: `flex`,
+    fontSize: `24px`,
+    margin: `10px 20%`
+  });
   let id = ""; 
   let UrlId = "";
   
@@ -48,23 +53,34 @@ function Article() {
       console.log(error);
     });
   },[]);
+  console.log("prototype", data.Link_Prototype);
+  
+  useEffect(() => {
+     if(data.Link_Prototype == "none"){
+      setStyle({
+      display: `none`,
+      fontSize: `24px`,
+      margin: `10px 20%`,
+      color: `red`
+      });
+      console.log("style worked");
+    }
+  },[]);
 
-
+      
   return (
     <div className="article">  
       <Button Link="/" Name="Back"/>
       <header className = "project_header">
         <h1>{data.Name}</h1>
         <p>{data.Overview}</p>
+        <div className = "goals">
+          <h2> Goals </h2>
+          <h2>{data.Goal1}</h2>
+          <h2>{data.Goal2}</h2>
+          <h2>{data.Goal3}</h2>
+        </div>  
       </header>
-      <div className = "goals">
-          <div className = "goal_text">
-            <h1> Goals </h1>
-            <h2>{data.Goal1}</h2>
-            <h2>{data.Goal2}</h2>
-            <h2>{data.Goal3}</h2>
-          </div>
-      </div>
       <h1 className = "section_header">Sketching & Research</h1>
       <ArticleSection className = "article_section" sectionText = {data.Sketching_Research} sectionImageOne = {data.Sketch_Image_1} sectionImageTwo = {data.Sketch_Image_2} sectionImageThree = {data.Sketch_Image_3} sectionImageFour = {data.Sketch_Image_4}/>
       <h1 className = "section_header">Prototyping</h1>

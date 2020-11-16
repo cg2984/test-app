@@ -135,6 +135,17 @@ p{
   top:0;
   width:100%;
   background-color:white;
-  box-shadow-bottom:0 4px 2px -2px black;
+  margin:20px;
+  justify-content:center;
+}
+
+.project_nav button{
+  background-color:white;
+  color:#1521cf;
+}
+
+.project_nav button:hover{
+  background-color:#1521cf;
+  color:#fff;
 }
 

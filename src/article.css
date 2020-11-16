@@ -77,45 +77,19 @@
   align-self: flex-start
 }
 
-.button_link{
-	font-family: 'DM Sans', sans-serif;
-	padding:10px;
-}
-
-.button_link:hover{
-	border-bottom: #1521cf dashed 4px;
-}
 
 .goals{
 	display:flex;
 	flex-direction:column;
-	align-items:center;
-	margin:25px;
-	padding:20px;
-	background-color:#1521cf;
+	background-color:white;
 	width:100%;
-}
-.goal_img{
-	z-index:-1;
-	object-fit:cover;
-	height:300px;
-	width:100%;
-}
-
-.goal_text{
-	margin:10px 5px;
-}
-
-.goal_text h1{
-	margin:0;
 	line-height:70px;
-	color:white;
+	color:#1521cf;
+	text-align:left;
 }
 
-.goal_text h2{
-	margin:0;
-	line-height:70px;
-	color:white;
+.goals h2{
+	font-weight: 700;
 }
 
 .image_wrapper{
@@ -157,26 +131,35 @@
 .project_header{
 	display:flex;
 	flex-direction:column;
-	align-items:center;
+	align-items:flex-start;
 	justify-content:center;
-	margin:50px auto;
+	margin:50px 10%;
 	padding:20px;
 	width:100%;
+	max-width: 800px;
+	border-bottom: 1px solid black;
 }
 
 .project_header h1{
 	font-style: normal;
 	font-weight: 800;
-	font-size: 64px;
+	font-size: 100px;
 	color:black;
-	margin:20px;
+	text-transform:capitalize;
 }
 
 .project_header p{
 	color:black;
-	margin:50px 20%;
 }
 
+.project_header a{
+	font-size:24px;
+	margin:10px 20%;
+}
+
+hr{
+	color:black;
+}
 .reflection p{
 	margin:20px auto;
 	max-width:640px;
@@ -197,3 +180,6 @@ section div{
 	margin:0;
 }
 
+main img{
+	width:50%;
+}
