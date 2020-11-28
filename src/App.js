@@ -2,6 +2,7 @@ import React from 'react';
 import Home from "./pages/home.js";
 import Article from "./pages/article.js";
 import MiniArticle from "./pages/mini_article.js";
+import About from "./pages/about.js";
 import logo from './logo.svg';
 import './App.css';
 import axios from "axios";
@@ -17,6 +18,9 @@ function App() {
   	return ( 
     	<div className="App">
     		<Router>
+          <Route exact path="/about">
+            <About/>
+          </Route>
     	    <Route exact path="/project/:id">
       	    <Article/>
       		</Route>

@@ -24,6 +24,7 @@ function Article() {
   let id = ""; 
   let UrlId = "";
   
+  //making the url to get the data from the server
   UrlId = useParams();
   id = UrlId.id;
   let project_data = "https://tranquil-brushlands-15503.herokuapp.com/project/" + id;

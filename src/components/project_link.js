@@ -5,24 +5,26 @@ import {
 
 
 function ProjectLink({projectName, projectDescription, projectImage, projectId, urlParam}) {
-  const style = {
-    backgroundImage: `linear-gradient(180deg, rgba(21, 33, 207, 0.25) 0%, rgba(36, 200, 255, 0.25) 100%), url(${projectImage})`,
-    backgroundSize: `450px`,
-    margin: `5px`,
-    width:`100%`,
-    height: `100%`,
-    border: `5px solid #000000`
-  };
-
   return (
-    <div className = "project-link_home">
-      {
-        urlParam == "" 
-        ? <a className = "project_name" href = {`/project/${projectId}`}>{projectName}</a> 
-        : <a className = "project_name" href = {`/miniproject/${projectId}`}>{projectName}</a> 
-      }
-      <p className = "project_description">{projectDescription}</p>
-      <img src = {projectImage} className = "project_img"/>             	
+    <div className = "project-link">
+      <img className = "project_img" src = {projectImage} alt = "an image of the project"/>
+      <div className = "project_text">
+        <p className = "project_description">{projectDescription}</p>
+        <div className = "project_tools">
+          <p> Tools Used </p>
+          <ul>
+            <li> Figma </li>
+            <li> Pen and Paper </li>
+            <li> Interviews </li>
+          </ul>
+        </div>
+
+        {
+          urlParam == "" 
+          ? <a href = {`/project/${projectId}`}>read case study</a> 
+          : <a href = {`/miniproject/${projectId}`}>see more</a> 
+        }
+      </div>       	
     </div>
   );
 }
