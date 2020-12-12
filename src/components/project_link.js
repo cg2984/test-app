@@ -1,32 +1,28 @@
-import React, {useEffect,useState} from 'react';
+import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   useLocation
 } from "react-router-dom";
 
-
-function ProjectLink({projectName, projectDescription, projectImage, projectId, urlParam}) {
-  return (
-    <div className = "project-link">
-      <img className = "project_img" src = {projectImage} alt = "an image of the project"/>
+class ProjectLink extends Component {
+  render(props) {
+    return(
+      <div className = "project-link">
+      <img className = "project_img" src = {this.props.projectImage} alt = "an image of the project"/>
       <div className = "project_text">
-        <p className = "project_description">{projectDescription}</p>
-        <div className = "project_tools">
-          <p> Tools Used </p>
-          <ul>
-            <li> Figma </li>
-            <li> Pen and Paper </li>
-            <li> Interviews </li>
-          </ul>
-        </div>
-
+        <h2>{this.props.projectName}</h2>
+        <p className = "project_description">{this.props.projectDescription}</p>
         {
-          urlParam == "" 
-          ? <a href = {`/project/${projectId}`}>read case study</a> 
-          : <a href = {`/miniproject/${projectId}`}>see more</a> 
+          this.props.urlParam == "" 
+          ? <a href = {`/project/${this.props.projectId}`}>read case study</a> 
+          : <a href = {`/miniproject/${this.props.projectId}`}>see more</a> 
         }
-      </div>       	
+      </div>        
     </div>
-  );
+    )
+    
+  }
 }
-
 export default ProjectLink;
+
+

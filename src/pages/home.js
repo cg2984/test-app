@@ -191,7 +191,10 @@ function Home() {
                   projectName = {data[i].name} 
                   projectDescription = {data[i].description} 
                   projectImage = {data[i].image} 
-                  projectId = {data[i].id} 
+                  projectId = {data[i].id}
+                  tool_1 = {data[i].tool_1} 
+                  tool_2 = {data[i].tool_2} 
+                  tool_3 = {data[i].tool_3} 
                   urlParam = {urlParam}
                 />
                 ))}

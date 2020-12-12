@@ -1,25 +1,16 @@
-import React from 'react';
-import Modal from 'react-modal';
-
-
-function ArticleSection({sectionText, sectionImageOne, sectionImageTwo, sectionImageThree, sectionImageFour, sectionHeader}) {
+import React, { Component } from 'react';
+class Section extends Component {
+  render(props) {
+    return(
+      <section className = "articleSection"> 
+        <h2 className = "section_title">{this.props.header}</h2>
+        <p>{this.props.body}</p>
+        <img src = {this.props.image} alt = "image of the final product"/>
+      </section>
+    )
     
-  return (
-    <section className = "articleSection">
-    	<div className = "image_wrapper">  
-        	<img className = "article_image_main" src = {sectionImageTwo} width="1080" height="1080"/>
-        	<img className = "article_image_main" src = {sectionImageOne} width="1080" height="1080"/>
-    	</div>
-    	<div className = "text_image_wrapper">
-                <div className = "image_wrapper_inner">
-                    <img className = "article_image_small" src = {sectionImageFour} width="1080" height="1080"/>
-                 </div>
-        		<p className = "article_text">{sectionText}</p>
-        </div>
-    </section>
-  );
+  }
 }
-
-export default ArticleSection;
+export default Section;
 
 

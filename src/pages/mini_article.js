@@ -59,16 +59,16 @@ function MiniArticle() {
     }
   },[data]);
     return (
-        <div className = "article">  
-          <Button Link="/" Name="Back"/>
-          <header className = "project_header">
+        <div className = "mini_article">  
+          <header className = "mini_article_header">
+            <a className = "article_button" href = "/"> back </a>
             <h1>{data.name}</h1>
             <p>{data.blurb}</p>
           </header>
           <main>
             {data.images && 
               data.images.map((img,i) => (
-                <img src = {data.images[i].url} alt = "images of the work"/>
+                <img className = "mini_article_img" src = {data.images[i].url} alt = "images of the work"/>
               ))
             }
           </main>

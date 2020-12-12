@@ -1,5 +1,5 @@
 import React, {useEffect,useState} from 'react';
-import ArticleSection from "../components/article_section.js";
+import Section from "../components/article_section.js";
 import ProjectLink from "../components/project_link.js";
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
@@ -70,28 +70,39 @@ function Article() {
 
       
   return (
-    <div className="article">  
-      <Button Link="/" Name="Back"/>
-      <header className = "project_header">
-        <h1>{data.Name}</h1>
-        <p>{data.Overview}</p>
-        <div className = "goals">
-          <h2> Goals </h2>
-          <h2>{data.Goal1}</h2>
-          <h2>{data.Goal2}</h2>
-          <h2>{data.Goal3}</h2>
-        </div>  
-      </header>
-      <h1 className = "section_header">Sketching & Research</h1>
-      <ArticleSection className = "article_section" sectionText = {data.Sketching_Research} sectionImageOne = {data.Sketch_Image_1} sectionImageTwo = {data.Sketch_Image_2} sectionImageThree = {data.Sketch_Image_3} sectionImageFour = {data.Sketch_Image_4}/>
-      <h1 className = "section_header">Prototyping</h1>
-      <ArticleSection className = "article_section" sectionText = {data.Prototyping} sectionImageOne = {data.Prototyping_Image_1} sectionImageTwo = {data.Prototyping_Image_2} sectionImageThree = {data.Prototype_Image_3} sectionImageFour = {data.Prototype_Image_4}/>
-      <h1 className = "section_header">Finalizing</h1>
-      <ArticleSection className = "article_section" sectionText = {data.Final} sectionImageOne = {data.Final_Image_1} sectionImageTwo = {data.Final_Image_2} sectionImageThree = {data.Final_Image_3} sectionImageFour = {data.Final_Image_4}/>
-      <h1 className = "section_header">Reflection</h1>
-      <section className = "reflection">
-        <p>{data.Reflection}</p>
-      </section>
+    <div className="article"> 
+      <nav>
+        <a className = "article_button" href = "/"> back </a>
+      </nav>  
+      <h2 className = "article_title">{data.Name}</h2>
+      <Section
+        id = "Overview"
+        header = {"Overview"}
+        body = {data.Overview}
+        image = {data.Final_Image_4}
+       />
+      <Section
+        id = "Research"
+        header = {"Research"}
+        body = {data.Sketching_Research}
+        image = {data.Sketch_Image_1}
+      />
+      <Section
+        id = "Evalulate"
+        header = {"Prototyping"}
+        body = {data.Prototyping}
+        image = {data.Prototyping_Image_1}
+      />
+      <Section
+        id = "Finalizing"
+        header = {"Evalulate"}
+        body = {data.Prototyping}
+        image = {data.Prototyping_Image_2}
+      />
+      <Section
+        header = {"Reflection"}
+        body = {data.Reflection}
+      />
       <footer className = "article_footer">
         <h2>See another project</h2>
         <div className = "next_projects">
