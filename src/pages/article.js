@@ -85,19 +85,28 @@ function Article() {
         id = "Research"
         header = {"Research"}
         body = {data.Sketching_Research}
-        image = {data.Sketch_Image_1}
+        image1 = {data.Sketch_Image_1}
+        image2 = {data.Sketch_Image_2}
+        image3 = {data.Sketch_Image_3}
+        image4 = {data.Sketch_Image_4}
       />
       <Section
         id = "Evalulate"
         header = {"Prototyping"}
         body = {data.Prototyping}
-        image = {data.Prototyping_Image_1}
+        image1 = {data.Prototyping_Image_1}
+        image2 = {data.Prototyping_Image_2}
+        image3 = {data.Prototyping_Image_3}
+        image4 = {data.Prototyping_Image_4}
       />
       <Section
         id = "Finalizing"
         header = {"Evalulate"}
         body = {data.Prototyping}
-        image = {data.Prototyping_Image_2}
+        image1 = {data.Final_Image_1}
+        image2 = {data.Final_Image_2}
+        image3 = {data.Final_Image_3}
+        image4 = {data.Final_Image_4}
       />
       <Section
         header = {"Reflection"}

@@ -12,6 +12,7 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   //const idFromTitle = title.replace(/\s+/g,"-").toLowerCase();
