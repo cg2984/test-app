@@ -72,7 +72,7 @@ function Article() {
   return (
     <div className="article"> 
       <nav>
-        <a className = "article_button" href = "/"> back </a>
+        <a className = "article_button" href = "/"> Back Home </a>
       </nav>  
       <h2 className = "article_title">{data.Name}</h2>
       <Section
