@@ -11,6 +11,7 @@ import {
 import "../article.css"
 import Button from "../components/button.js"
 
+
 function MiniArticle() {
   const [data, setData] = useState("");
   const [imageArray, setImageArray] = useState([]);
@@ -61,7 +62,7 @@ function MiniArticle() {
     return (
         <div className = "mini_article">  
           <header className = "mini_article_header">
-            <a className = "article_button" href = "/"> back </a>
+            <a className = "article_button" href = "/"> Back </a>
             <h1>{data.name}</h1>
             <p>{data.blurb}</p>
           </header>
@@ -75,4 +76,5 @@ function MiniArticle() {
         </div>
     );
  }
+
 export default MiniArticle;

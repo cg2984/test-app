@@ -1,29 +1,30 @@
 .articleSection{
-  display:grid;
-  grid-template:5% auto auto/repeat(4,1fr);
+  display:flex;
+  flex-direction:column;
   margin:25px 0;
   padding:20px;
-  grid-row-gap:20px;
 }
 
 .articleSection h2{
-  grid-area:1/1/1/2;
-  justify-self:end;
+  margin:20px;
 }
 
 .articleSection p{
-  grid-area:2/2/2/4;
   font-weight:400;
-}
-
-.articleSection img{
-  grid-area:4/1/4/5;
-  width:100%;
+  margin:20px;
 }
 
 .article_title{
   font-weight:800;
   font-size:50px;
+}
+
+.images{
+  width:48%;
+}
+
+.text{
+  width:540px;
 }
 
 .next_projects{
@@ -68,4 +69,8 @@
 
 .article_button{
   margin:15px 0 15px 0;
+}
+.article main{
+  display:flex;
+  flex-direction:row;
 }
