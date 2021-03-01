@@ -3,14 +3,10 @@ import Home from "./pages/home.js";
 import Article from "./pages/article.js";
 import MiniArticle from "./pages/mini_article.js";
 import About from "./pages/about.js";
-import logo from './logo.svg';
 import './App.css';
-import axios from "axios";
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect
+  Route
 } from "react-router-dom";
 
 function App() {

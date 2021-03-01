@@ -1,14 +1,14 @@
 .articleSection{
   display:grid;
-  grid-template:5% auto auto/repeat(4,1fr);
+  grid-template:50px auto auto/repeat(4,1fr);
   margin:25px 0;
   padding:20px;
   grid-row-gap:20px;
 }
 
 .articleSection h2{
-  grid-area:1/1/1/2;
-  justify-self:end;
+  grid-area:1/2/1/2;
+  justify-self:start;
 }
 
 .articleSection p{
@@ -22,8 +22,11 @@
 }
 
 .article_title{
-  font-weight:800;
+  font-weight:500;
   font-size:50px;
+  margin:50px auto;
+  text-align:center;
+  text-transform:uppercase;
 }
 
 .next_projects{
@@ -34,6 +37,9 @@
 
 .next_projects a{
   margin:30px;
+}
+.next_projects a:hover{
+  margin:29.5px;
 }
 
 .mini_article{
@@ -68,4 +74,8 @@
 
 .article_button{
   margin:15px 0 15px 0;
+}
+
+.article_button:hover{
+  margin:15px 0 14px 0;
 }

@@ -5,17 +5,7 @@
     border: 5px solid red;
   }
 }
-@keyframes hover{
-  0%{
-    color:#3772FF;
-  }
-  50%{
-    color:#FDCA40;
-  }
-  100%{
-   color:#DF2935;
-  }
-}
+
 .App{
   margin:0 auto;
   max-width:1080px;
@@ -33,6 +23,7 @@ a{
 
 a:hover{
   border-bottom:1px dashed #3772FF;
+  margin:10px 0 9px 0;
 }
 
 button{
@@ -40,11 +31,47 @@ button{
   background-color:#FFFFFF;
 }
 
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
 footer{
   margin:50px auto;
   text-align:center;
   display:flex;
   flex-direction:column;
+}
+
+.fade-enter{
+  opacity:0;
+}
+
+.fade-enter-active{
+  opacity:1;
+  transition: opacity 200ms;
+}
+
+.fade-exit{
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
 }
 
 h1{
@@ -71,7 +98,12 @@ header{
   justify-content:center;
 }
 
-main{
+hr{
+  border:1px solid linear-gradient(135deg, hsla(148, 100%, 47%, 1) 0%, hsla(222, 100%, 61%, 1) 100%);
+  margin:5px 0;
+}
+
+body{
   display:flex;
   flex-direction:column;
   align-items:space-between;
@@ -83,6 +115,8 @@ main{
 .loading{
   display:flex;
   flex-direction:column;
+  margin:40% 0;
+  max-width:1080px;
 }
 
 nav{
@@ -126,7 +160,7 @@ p{
   display:flex;
   flex-direction:row;
   text-align:left;
-  margin-top:50px;
+  margin-bottom:50px;
   height:50vh;
   width:100%;
 }
@@ -146,15 +180,12 @@ p{
 .proj_gallery{
   display:flex;
   flex-direction:column;
+  margin:15px 0;
 }
 
 .proj_img{
   object-fit:cover;
   width:50%;
-}
-
-.nav_button{
-  font-size:15px;
 }
 
 .project_nav button{

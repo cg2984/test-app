@@ -3,12 +3,16 @@ import ProjectLink from "../components/project_link.js";
 import Header from "../components/header.js";
 import axios from 'axios';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
 function Home() {
   const [data, setData] = useState(null);
+  const [value, setValue] = useState(0);
   const [urlParam, setUrlParam] = useState("");
+
   //i use url param to change the url for the API
-  var url = `https://tranquil-brushlands-15503.herokuapp.com/${urlParam}`
+  var url = `https://tranquil-brushlands-15503.herokuapp.com/${urlParam}`;
   
   //Getting the data from my backend
   useEffect(() => {
@@ -19,7 +23,32 @@ function Home() {
     .catch(function (error) {
       console.log(error);
     });
-  }, [urlParam]);
+  }, [urlParam, url]);
+
+  useEffect(() => {
+    if(value===1){
+      setUrlParam("mini");
+    } 
+    if(value===0){
+      setUrlParam("");
+    }
+  }, [value]);
+
+  if(data){
+    console.log(data);
+    var projectArray = data.map((item, i) => (
+    <ProjectLink
+      key = {i.toString()}
+      projectName = {data[i].name} 
+      projectDescription = {data[i].description} 
+      projectImage = {data[i].image} 
+      projectId = {data[i].id} 
+      urlParam = {urlParam}
+      />
+    ))
+  }
+
+
 
   //making sure that the data is loaded. might be more elegant solution but I dont know it. i have stuck it in issues in github
   //maybe ill put a bootstrap loading animation anything
@@ -38,26 +67,20 @@ function Home() {
        return (
         <main>
           <Header/>
-          <section id = "projects" className = "home">
+          <section className = "home">
               <nav>
-                <button onClick={() => setUrlParam("")}>
-                  <h2 className = "nav_button"> Case Studies </h2>
-                </button>
-                <button onClick={() => setUrlParam("mini")}>
-                  <h2 className = "nav_button"> Fun </h2>
-                </button>
+                <Tabs
+                  value={value}
+                  indicatorColor="primary"
+                  textColor="primary"
+                  aria-label="tabs_navigation"
+                  centered
+                >
+                  <Tab label="Case Studies" onClick={() => setValue(0)}/>
+                  <Tab label="Fun Projects" onClick={() => setValue(1)}/>
+                </Tabs>
               </nav>
-              <div className = "proj_gallery">
-                {data.map((item, i) => (
-                <ProjectLink 
-                  projectName = {data[i].name} 
-                  projectDescription = {data[i].description} 
-                  projectImage = {data[i].image} 
-                  projectId = {data[i].id} 
-                  urlParam = {urlParam}
-                />
-                ))}
-              </div>
+              {projectArray}
           </section> 
         </main>
       ); 

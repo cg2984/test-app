@@ -1,26 +1,14 @@
 import React, {useEffect,useState} from 'react';
 import Section from "../components/article_section.js";
-import ProjectLink from "../components/project_link.js";
 import axios from 'axios';
-import { useHistory } from "react-router-dom";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   useParams
 } from "react-router-dom";
 import "../article.css"
-import Button from "../components/button.js"
 
 function Article() {
   const [data, setData] = useState([]);
   const [projects, setProjects] = useState([]);
-  const [links, setLinks] = useState({});
-  const [style, setStyle] = useState({
-    display: `flex`,
-    fontSize: `24px`,
-    margin: `10px 20%`
-  });
   let id = ""; 
   let UrlId = "";
   
@@ -41,7 +29,7 @@ function Article() {
     .catch(function (error) {
       console.log(error);
     });
-  },[id]);
+  },[id, project_data]);
 
   //getting the data for the other projects in the footer
   useEffect(() => {
@@ -53,28 +41,15 @@ function Article() {
     .catch(function (error) {
       console.log(error);
     });
-  },[]);
+  },[next_projects]);
   console.log("prototype", data.Link_Prototype);
-  
-  useEffect(() => {
-     if(data.Link_Prototype == "none"){
-      setStyle({
-      display: `none`,
-      fontSize: `24px`,
-      margin: `10px 20%`,
-      color: `red`
-      });
-      console.log("style worked");
-    }
-  },[]);
-
       
   return (
     <div className="article"> 
       <nav>
         <a className = "article_button" href = "/"> Back Home </a>
-      </nav>  
-      <h2 className = "article_title">{data.Name}</h2>
+      </nav> 
+      <h1 className = "article_title">{data.Name}</h1>
       <Section
         id = "Overview"
         header = {"Overview"}
