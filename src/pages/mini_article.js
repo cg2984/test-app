@@ -4,6 +4,7 @@ import {
   useParams
 } from "react-router-dom";
 import "../article.css"
+import { SRLWrapper } from "simple-react-lightbox";
 
 function MiniArticle() {
   const [data, setData] = useState("");
@@ -40,18 +41,22 @@ function MiniArticle() {
     }
   },[data]);
     return (
-        <div className = "mini_article">  
+        <div className = "mini_article">
+          <nav>
+            <a className = "article_button" href = "/"> Back Home </a>
+          </nav>  
           <header className = "mini_article_header">
-            <a className = "article_button" href = "/"> Back </a>
             <h1>{data.name}</h1>
             <p>{data.blurb}</p>
           </header>
           <main>
-            {data.images && 
-              data.images.map((img,i) => (
-                <img className = "mini_article_img" src = {data.images[i].url} alt = "images of the work"/>
-              ))
-            }
+            <SRLWrapper>
+              {data.images && 
+                data.images.map((img,i) => (
+                  <img className = "mini_article_img" src = {data.images[i].url} alt = "images of the work"/>
+                ))
+              }
+            </SRLWrapper>
           </main>
         </div>
     );

@@ -5,6 +5,7 @@ import {
   useParams
 } from "react-router-dom";
 import "../article.css"
+import { SRLWrapper } from "simple-react-lightbox";
 
 function Article() {
   const [data, setData] = useState([]);
