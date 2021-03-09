@@ -5,7 +5,8 @@ import {
   useParams
 } from "react-router-dom";
 import "../article.css"
-import { SRLWrapper } from "simple-react-lightbox";
+import Header from "../components/header.js";
+import Link from "../components/link.js";
 
 function Article() {
   const [data, setData] = useState([]);
@@ -48,15 +49,12 @@ function Article() {
   return (
     <div className="article"> 
       <nav>
-        <a className = "article_button" href = "/"> Back Home </a>
+        <Link name="Home" location="/"/>
       </nav> 
-      <h1 className = "article_title">{data.Name}</h1>
-      <Section
-        id = "Overview"
-        header = {"Overview"}
-        body = {data.Overview}
-        image = {data.Final_Image_4}
-       />
+      <Header
+        title={data.Name}
+        blurb={<p>{data.Overview}</p>}
+      />
       <Section
         id = "Research"
         header = {"Research"}
@@ -83,7 +81,7 @@ function Article() {
         <h2>See another project</h2>
         <div className = "next_projects">
           {projects.map((item, i) => (
-            <a href = {projects[i].id}>{projects[i].name}</a>
+            <Link name={projects[i].name} location={projects[i].id}/>
           ))}
         </div>
       </footer>

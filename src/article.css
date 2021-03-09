@@ -39,7 +39,7 @@
 }
 
 .articleSection img{
-  height:80vh;
+  max-width:1080px;
   cursor:pointer;
 }
 
@@ -94,4 +94,3 @@
   margin:5px;
   cursor:pointer;
 }
-

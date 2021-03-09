@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-function Header() {
-  return (
-    <header>
-    	<h2> Hello! I'm Clara, a creative technologist based in NYC</h2>
-    	<a href = "/about"> Read more about me!</a>
-    </header>
-  );
+class Header extends Component {
+  render(props) {
+    return(
+      <header>
+      	<h1>{this.props.title}</h1>
+      	{this.props.blurb}
+      </header>
+    )
+    
+  }
 }
-
 export default Header;
 

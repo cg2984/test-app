@@ -12,7 +12,7 @@ import {
 function App() {
   //const idFromTitle = title.replace(/\s+/g,"-").toLowerCase();
   	return ( 
-    	<div className="App">
+    	<body className="App">
     		<Router>
           <Route exact path="/about">
             <About/>
@@ -27,7 +27,7 @@ function App() {
             <MiniArticle/>
           </Route>
       	</Router>
-    	</div>
+    	</body>
   	);
 }
 

@@ -1,28 +1,21 @@
 import React, {useEffect,useState} from 'react';
+import axios from 'axios';
+//components
 import ProjectLink from "../components/project_link.js";
 import Header from "../components/header.js";
-import axios from 'axios';
+import Link from "../components/link.js";
+//material ui
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import { createMuiTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/core/styles';
 import Fade from '@material-ui/core/Fade';
+
 
 function Home() {
   const [data, setData] = useState(null);
   const [value, setValue] = useState(0);
   const [urlParam, setUrlParam] = useState("");
   const [checked, setChecked] = useState(false);
-
-  //making a theme to change my tab menu
-  const theme = createMuiTheme({
-    palette: {
-      primary: {
-        main: '#3772FF'
-      }
-    },
-  });
 
   //i use url param to change the url for the API
   var url = `https://tranquil-brushlands-15503.herokuapp.com/${urlParam}`;
@@ -54,7 +47,7 @@ function Home() {
   }, [value]);
 
   //making sure that the data is loaded. might be more elegant solution but I dont know it at the moment
-  //there a little animation there 
+  //theres a little animation there 
   if(data == null){
     return(
         <div className = "loading"> 
@@ -67,21 +60,22 @@ function Home() {
   else{
        return (
         <main>
-          <Header/>
+          <Header 
+            title="Hello! I'm Clara, a creative technologist based in NYC"
+            blurb={<Link name="Read more about me!" location ="/about"/>}
+          />
           <section className = "home">
               <nav>
-                <ThemeProvider theme={theme}>
-                  <Tabs
-                    value={value}
-                    indicatorColor="primary"
-                    textColor="primary"
-                    aria-label="tabs_navigation"
-                    centered
-                  >
-                    <Tab label="Case Studies" onClick={() => setValue(0)}/>
-                    <Tab label="Experiments" onClick={() => setValue(1)}/>
-                  </Tabs>
-                </ThemeProvider>
+                <Tabs
+                  value={value}
+                  indicatorColor="primary"
+                  textColor="primary"
+                  aria-label="tabs_navigation"
+                  centered
+                >
+                  <Tab label="Case Studies" onClick={() => setValue(0)} className="tab"/>
+                  <Tab label="Experiments" onClick={() => setValue(1)} className="tab"/>
+                </Tabs>
               </nav>
               <Fade 
                 in={checked}

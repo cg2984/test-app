@@ -9,26 +9,22 @@
 .App{
   margin:0 auto;
   max-width:1080px;
+  padding:0 20px;
 }
-a{
+.link{
   font-family: 'Roboto', sans-serif;
   font-weight:400;
   font-size: 48px;
-  color:#3772FF;
+  color:#3f51b5;
   text-decoration: none;
   font-size: 20px;
   margin:10px 0 10px 0;
   width:fit-content;
 }
 
-a:hover{
-  border-bottom:1px dashed #3772FF;
+.link:hover{
+  border-bottom:1px dashed #3f51b5;
   margin:10px 0 9px 0;
-}
-
-button{
-  border:none;
-  background-color:#FFFFFF;
 }
 
 footer{
@@ -40,9 +36,9 @@ footer{
 
 h1{
   font-family: 'Roboto', sans-serif;
-  font-weight:900;
+  font-weight:700;
   font-size: 45px;
-  color:#000000;
+  color:#051014;
   margin:0;
 }
 
@@ -52,6 +48,7 @@ h2{
   font-family: 'Roboto', sans-serif;
   font-weight:500;
   margin:10px 0;
+  color:#051014;
 }
 
 header{
@@ -60,6 +57,18 @@ header{
   flex-direction:column;
   align-items:flex-start;
   justify-content:center;
+  padding:50px;
+}
+
+header h1{
+  margin:10px 0;
+  background: -webkit-linear-gradient(21deg, rgba(130,63,181,1), rgba(63,81,181,1), rgba(130,63,181,1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+header p{
+  margin:10px 0;
+  color:#3f51b5;
 }
 
 hr{
@@ -94,14 +103,18 @@ nav{
 
 p{
   font-family: 'Roboto', sans-serif;
-  font-weight:500;
+  font-weight:400;
   font-size: 20px;
   padding:0;
   margin:0px;
   line-height:30px;
-  color:#222222;
+  color:#051014;
 }
 
+
+.tabs{
+  color:red;
+}
 /*------------------------------HOME PAGE PROJECT STYLING*/
 
 .home{
@@ -111,42 +124,39 @@ p{
   justify-content:center;
 }
 
-.proj_desc{
-  margin:10px 0;
-  font-size:45px;
-  line-height:1.25em;
-  font-weight:300;
-}
-
 .proj_link{
-  display:flex;
-  flex-direction:row;
-  text-align:left;
+  display:grid;
+  grid-template-rows: auto auto auto 1fr;
+  grid-template-columns: 50% 50%;
+  grid-gap:25px;
   margin:10px 0 40px 0;
-  height:50vh;
+  height:100%;
   width:100%;
 }
 
-.proj_text{
-  display:flex;
-  flex-direction:column;
-  margin:0;
-  padding:20px;
+.proj_link img{
+  object-fit:cover;
+  width:100%;
+  grid-area:1/1/5/2;
 }
 
-.proj_text h2{
-  font-weight:700;
-  font-size:25px;
+.proj_link h2{
+  grid-area:1/2/1/2;
 }
+
+.proj_link p{
+  grid-area:2/2/2/2;
+  margin:10px 0;
+}
+
+.proj_link a{
+  grid-area:3/2/3/2;
+}
+
+
 
 .proj_gallery{
   display:flex;
   flex-direction:column;
   margin:15px 0;
 }
-
-.proj_img{
-  object-fit:cover;
-  width:50%;
-}
-
