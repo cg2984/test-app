@@ -58,19 +58,19 @@ function Article() {
       <Section
         id = "Research"
         header = {"Research"}
-        body = {data.Sketching_Research}
+        body = {data.Section1}
         image = {data.Sketch_Image_1}
       />
       <Section
         id = "Evalulate"
         header = {"Prototyping"}
-        body = {data.Prototyping}
+        body = {data.Section2}
         image = {data.Prototyping_Image_1}
       />
       <Section
         id = "Finalizing"
         header = {"Evalulate"}
-        body = {data.Prototyping}
+        body = {data.Section3}
         image = {data.Prototyping_Image_2}
       />
       <Section
