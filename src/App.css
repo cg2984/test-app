@@ -9,8 +9,13 @@
 .App{
   margin:0 auto;
   max-width:1080px;
-  padding:0 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:space-between;
+  justify-content:center;
+  overflow:visible;
 }
+
 .link{
   font-family: 'Roboto', sans-serif;
   font-weight:400;
@@ -71,18 +76,13 @@ header p{
   color:#3f51b5;
 }
 
+.home{
+  margin:20px;
+}
+
 hr{
   border:1px solid linear-gradient(135deg, hsla(148, 100%, 47%, 1) 0%, hsla(222, 100%, 61%, 1) 100%);
   margin:5px 0;
-}
-
-body{
-  display:flex;
-  flex-direction:column;
-  align-items:space-between;
-  justify-content:center;
-  overflow:visible;
-  margin:0 auto;
 }
 
 .loading{
@@ -152,8 +152,6 @@ p{
 .proj_link a{
   grid-area:3/2/3/2;
 }
-
-
 
 .proj_gallery{
   display:flex;

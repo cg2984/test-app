@@ -7,6 +7,7 @@ import {
 import "../article.css"
 import Header from "../components/header.js";
 import Link from "../components/link.js";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 function Article() {
   const [data, setData] = useState([]);
@@ -48,12 +49,12 @@ function Article() {
       
   return (
     <div className="article"> 
-      <nav>
-        <Link name="Home" location="/"/>
-      </nav> 
       <Header
         title={data.Name}
         blurb={<p>{data.Overview}</p>}
+        goals={data.goals}
+        name={<ArrowBackIcon/>}
+        location="/" 
       />
       <Section
         id = "Research"

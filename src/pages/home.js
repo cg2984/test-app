@@ -59,7 +59,7 @@ function Home() {
 
   else{
        return (
-        <main>
+        <main className = "home">
           <Header 
             title="Hello! I'm Clara, a creative technologist based in NYC"
             blurb={<Link name="Read more about me!" location ="/about"/>}

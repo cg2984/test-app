@@ -36,6 +36,7 @@
 
 .articleSection p{
     font-weight:400;
+    white-space: pre-wrap;
 }
 
 .articleSection img{

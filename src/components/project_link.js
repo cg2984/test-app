@@ -9,8 +9,8 @@ class ProjectLink extends Component {
         <p>{this.props.projectDescription}</p>
         {
           this.props.urlParam === "" 
-          ? <Button variant="contained" color="primary" href={`/project/${this.props.projectId}`}>Read the case study</Button>
-          : <Button variant="contained" color="primary" href={`/miniproject/${this.props.projectId}`}>See more</Button> 
+          ? <Button size="large" variant="contained" color="primary" href={`/project/${this.props.projectId}`}>Read the case study</Button>
+          : <Button size="large" variant="contained" color="primary" href={`/miniproject/${this.props.projectId}`}>See more</Button> 
         }
         <img className = "proj_img" src = {this.props.projectImage} alt = "the project"/>
       </div>        
