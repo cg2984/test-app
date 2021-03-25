@@ -81,7 +81,7 @@ function Home() {
                 in={checked}
                 timeout = { 200 }
               >
-                <div>
+                <div className="projectLinkWrapper">
                   {data.map((item, i) => (
                     <ProjectLink
                       key = {i.toString()}

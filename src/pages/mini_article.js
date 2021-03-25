@@ -5,6 +5,8 @@ import {
 } from "react-router-dom";
 import "../article.css"
 import { SRLWrapper } from "simple-react-lightbox";
+import Header from "../components/header.js";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 function MiniArticle() {
   const [data, setData] = useState("");
@@ -41,14 +43,14 @@ function MiniArticle() {
     }
   },[data]);
     return (
-        <div className = "mini_article">
-          <nav>
-            <a className = "article_button" href = "/"> Back Home </a>
-          </nav>  
-          <header className = "mini_article_header">
-            <h1>{data.name}</h1>
-            <p>{data.blurb}</p>
-          </header>
+        <div className = "mini_article"> 
+          <Header
+            title={data.name}
+            blurb={<p>{data.blurb}</p>}
+            goals={data.goals}
+            name={<ArrowBackIcon/>}
+            location="/" 
+          />
           <main>
             <SRLWrapper>
               {data.images && 
