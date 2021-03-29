@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Link from "../components/link.js";
 
-
 class Header extends Component {
   render(props) {
     return(

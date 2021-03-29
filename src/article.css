@@ -19,6 +19,7 @@
   width:98%;
   object-fit:cover;
   margin:10px;
+  max-height: 1000px;
 }
 
 .articleSection{
