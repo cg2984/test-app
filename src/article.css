@@ -12,7 +12,13 @@
   flex-direction:column;
   align-items: center;
   max-width:1080px;
-  margin:20px;
+  margin:20px auto;
+}
+
+.article_image{
+  width:98%;
+  object-fit:cover;
+  margin:10px;
 }
 
 .articleSection{
@@ -23,26 +29,6 @@
   justify-content:center;
   margin:25px 0;
   grid-row-gap:20px;
-}
-
-.articleSection span{
-  display:flex;
-  flex-direction:column;
-  align-content:flex-start;
-  max-width:640px;
-}
-
-.articleSection h2{
-}
-
-.articleSection p{
-    font-weight:400;
-    white-space: pre-wrap;
-}
-
-.articleSection img{
-  max-width:1080px;
-  cursor:pointer;
 }
 
 .article_title{
@@ -99,4 +85,18 @@
 
 .stepper{
   width:100%;
+  background-color:white;
+  margin:20px 0;
+}
+
+span{
+  max-width:640px;
+  white-space: pre-wrap;
+}
+
+.paper{
+  padding:20px;
+  margin:10px;
+  max-width:640px;
+  width:75%;
 }

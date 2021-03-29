@@ -13,30 +13,43 @@ import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import MobileStepper from '@material-ui/core/MobileStepper';
 import Button from '@material-ui/core/Button';
 import { SRLWrapper } from "simple-react-lightbox";
+import Container from '@material-ui/core/Container';
+import { Fade } from '@material-ui/core';
+
 
 
 function Article() {
   const [data, setData] = useState([]);
   const [projects, setProjects] = useState([]);
   const [activeStep, setActiveStep] = useState(0);
+  const [imageArray, setImageArray] = useState([]);
+  const [checked, setChecked] = useState(false);
+  /* TRY THIS LATER
+  const ButtonForward = () => {
+    setActiveStep(tempStep+=1)
+    setChecked(true)
+  }
+
+  const ButtonBack = () => (
+    setActiveStep(tempStep-=1),
+    setChecked(true)
+  )*/
+
   let sectionArray = [
     <Section
         id = "Research"
         header = {"Research"}
         body = {data.Section1}
-        image = {data.Sketch_Image_1}
       />, 
       <Section
         id = "Evalulate"
         header = {"Prototyping"}
         body = {data.Section2}
-        image = {data.Prototyping_Image_1}
       />,
       <Section
         id = "Finalizing"
         header = {"Evalulate"}
         body = {data.Section3}
-        image = {data.Prototyping_Image_2}
       />,
       <Section
         header = {"Reflection"}
@@ -57,7 +70,7 @@ function Article() {
   let project_data = "https://tranquil-brushlands-15503.herokuapp.com/project/" + id;
   let next_projects = "https://tranquil-brushlands-15503.herokuapp.com";
 
-  console.log(data.Image_Dump);
+
     
   //getting the data for this project  
   useEffect(() => {
@@ -65,6 +78,7 @@ function Article() {
     .then(function (response) {
       console.log("data response",response);
       setData(response.data);
+      setImageArray(response.data.Image_Dump)
     })
     .catch(function (error) {
       console.log(error);
@@ -82,43 +96,53 @@ function Article() {
       console.log(error);
     });
   },[next_projects]);
-  console.log("prototype", data.Link_Prototype);
   
+  useEffect(() => {
+    setChecked(false)
+    setTimeout(() => {
+      setChecked(true)
+    },500);
+  }, [checked]);
+
 
   return (
-    <div className="article"> 
+    <Container maxWidth={"lg"}> 
       <Header
         title={data.Name}
         blurb={<p>{data.Overview}</p>}
         goals={data.goals}
         name={<ArrowBackIcon/>}
         location="/" 
-      />
-      <MobileStepper
-        className="stepper"
-        variant="progress"
-        steps={4}
-        position="static"
-        activeStep={activeStep}
-        backButton={
-          <Button size="small" onClick={()=> setActiveStep(tempStep-=1)} disabled={activeStep === 0}>
-            <KeyboardArrowLeft />
-            Back
-          </Button>
-        }
-        nextButton={
-          <Button size="small" onClick={()=> setActiveStep(tempStep+=1)} disabled={activeStep === 3}>
-            Next
-            <KeyboardArrowRight />
-          </Button>
-        }
-      />
-      {sectionArray[activeStep]}
-      <SRLWrapper>
-        {data.Image_Dump.map((item, i) => (
-          <img src = {data.Image_Dump[i]}/>
-        ))}
-      </SRLWrapper>
+      /> 
+      <Container maxWidth={"md"}>
+        <h2>Project Process</h2>
+        {sectionArray[activeStep]}
+        <MobileStepper
+          className="stepper"
+          variant="dots"
+          steps={4}
+          position="static"
+          activeStep={activeStep}
+          nextButton={
+            <Button size="small" onClick={()=> setActiveStep(tempStep+=1) } disabled={activeStep === 3}>
+                Next
+              <KeyboardArrowRight />
+            </Button>
+          }
+          backButton={
+            <Button size="small" onClick={()=> setActiveStep(tempStep-=1)} disabled={activeStep === 0}>
+              <KeyboardArrowLeft />
+                Back
+            </Button>
+          }
+        />   
+        <h2>Project Images</h2>
+        <SRLWrapper>
+          {imageArray.map((item, i) => (
+            <img className="article_image" src = {imageArray[i].url}/>
+          ))}
+        </SRLWrapper>
+      </Container>
       <footer className = "article_footer">
         <h2>See another project</h2>
         <div className = "next_projects">
@@ -127,7 +151,7 @@ function Article() {
           ))}
         </div>
       </footer>
-    </div>
+    </Container>
   );
 }
 
