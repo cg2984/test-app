@@ -101,8 +101,8 @@ nav{
   flex-direction:row;
   top:0;
   width:100%;
-  background-color:white;
   z-index:1;
+  background-color: #fafafa;
 }
 
 p{
@@ -132,6 +132,9 @@ p{
   padding:20px;
   margin:20px;
   width:40%;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 }
 
 .projectLinkWrapper{

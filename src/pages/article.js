@@ -106,15 +106,14 @@ function Article() {
 
 
   return (
-    <Container maxWidth={"lg"}> 
-      <Header
-        title={data.Name}
-        blurb={<p>{data.Overview}</p>}
-        goals={data.goals}
-        name={<ArrowBackIcon/>}
-        location="/" 
-      /> 
-      <Container maxWidth={"md"}>
+        <Container maxWidth={"md"}>
+        <Header
+          title={data.Name}
+          blurb={<p>{data.Overview}</p>}
+          goals={data.goals}
+          name={<ArrowBackIcon/>}
+          location="/" 
+        /> 
         <h2>Project Process</h2>
         {sectionArray[activeStep]}
         <MobileStepper
@@ -139,10 +138,9 @@ function Article() {
         <h2>Project Images</h2>
         <SRLWrapper>
           {imageArray.map((item, i) => (
-            <img className="article_image" src = {imageArray[i].url}/>
+            <img className="article_image" src = {imageArray[i].url} loading="lazy"/>
           ))}
         </SRLWrapper>
-      </Container>
       <footer className = "article_footer">
         <h2>See another project</h2>
         <div className = "next_projects">

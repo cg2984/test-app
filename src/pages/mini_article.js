@@ -55,7 +55,7 @@ function MiniArticle() {
             <SRLWrapper>
               {data.images && 
                 data.images.map((img,i) => (
-                  <img className = "mini_article_img" src = {data.images[i].url} alt = "images of the work"/>
+                  <img className = "mini_article_img" src = {data.images[i].url} alt = "images of the work" loading="lazy"/>
                 ))
               }
             </SRLWrapper>
