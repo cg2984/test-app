@@ -142,7 +142,7 @@ function Article() {
             <Link classname={"link"} name={projects[i].name} location={projects[i].id}/>
           ))}
         </div>
-        <Button variant="contained" color="primary" href="#top" style={{"width":"25%"}}>Back to Top</Button>
+        <Button variant="contained" color="primary" href="#top" style={{"width":"25%", "margin":"20px 0"}}>Back to Top</Button>
       </footer>
     </Container>
   );

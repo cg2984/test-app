@@ -9,6 +9,7 @@ import Header from "../components/header.js";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import Link from "../components/link.js";
 import Container from '@material-ui/core/Container';
+import Button from '@material-ui/core/Button';
 
 function MiniArticle() {
   const [data, setData] = useState("");
@@ -52,6 +53,7 @@ function MiniArticle() {
             goals={data.goals}
             name={<ArrowBackIcon/>}
             location="/" 
+            id="top"
           />
           <main>
             <SRLWrapper>
@@ -62,6 +64,9 @@ function MiniArticle() {
               }
             </SRLWrapper>
           </main>
+          <footer className = "article_footer">
+            <Button variant="contained" color="primary" href="#top" style={{"width":"25%", "margin":"20px 0"}}>Back to Top</Button>
+          </footer>
         </Container>
     );
  }
