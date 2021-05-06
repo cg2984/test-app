@@ -14,7 +14,6 @@ import MobileStepper from '@material-ui/core/MobileStepper';
 import Button from '@material-ui/core/Button';
 import { SRLWrapper } from "simple-react-lightbox";
 import Container from '@material-ui/core/Container';
-import { Fade } from '@material-ui/core';
 
 
 
@@ -24,16 +23,6 @@ function Article() {
   const [activeStep, setActiveStep] = useState(0);
   const [imageArray, setImageArray] = useState([]);
   const [checked, setChecked] = useState(false);
-  /* TRY THIS LATER
-  const ButtonForward = () => {
-    setActiveStep(tempStep+=1)
-    setChecked(true)
-  }
-
-  const ButtonBack = () => (
-    setActiveStep(tempStep-=1),
-    setChecked(true)
-  )*/
 
   let sectionArray = [
     <Section
@@ -58,9 +47,7 @@ function Article() {
   ]
   let tempStep = activeStep
 
-  //right now not using these but might do later
-  const [onNext, setOnNext] = useState(false);
-  const [onBack, setOnBack] = useState(false);
+  const [classname, setClassname] = useState("link");
   let id = ""; 
   let UrlId = "";
   
@@ -78,12 +65,14 @@ function Article() {
     .then(function (response) {
       console.log("data response",response);
       setData(response.data);
-      setImageArray(response.data.Image_Dump)
+      setImageArray(response.data.Image_Dump);
+      response.data.projectLink === "null" ? setClassname("hidden") : setClassname("link");
     })
     .catch(function (error) {
       console.log(error);
     });
-  },[id, project_data]);
+    console.log("classname", classname)
+  },[id, project_data, classname]);
 
   //getting the data for the other projects in the footer
   useEffect(() => {
@@ -106,14 +95,16 @@ function Article() {
 
 
   return (
-        <Container maxWidth={"md"}>
-        <Header
-          title={data.Name}
-          blurb={<p>{data.Overview}</p>}
-          goals={data.goals}
-          name={<ArrowBackIcon/>}
-          location="/" 
-        /> 
+    <Container className="article" maxWidth={"md"}>
+      <Header
+        title={data.Name}
+        blurb={<> <p>{data.Overview}</p> <Link classname = {classname} name="See the project site!" location={data.projectLink}/></>}
+        goals={data.goals}
+        name={<ArrowBackIcon/>}
+        location="/" 
+        id="top"
+      />
+      <div className = "project_part"> 
         <h2>Project Process</h2>
         {sectionArray[activeStep]}
         <MobileStepper
@@ -134,20 +125,24 @@ function Article() {
                 Back
             </Button>
           }
-        />   
+        />
+      </div>
+      <div className = "project_part">   
         <h2>Project Images</h2>
         <SRLWrapper>
           {imageArray.map((item, i) => (
             <img className="article_image" src = {imageArray[i].url} loading="lazy"/>
           ))}
         </SRLWrapper>
+      </div>
       <footer className = "article_footer">
         <h2>See another project</h2>
         <div className = "next_projects">
           {projects.map((item, i) => (
-            <Link name={projects[i].name} location={projects[i].id}/>
+            <Link classname={"link"} name={projects[i].name} location={projects[i].id}/>
           ))}
         </div>
+        <Button variant="contained" color="primary" href="#top" style={{"width":"25%"}}>Back to Top</Button>
       </footer>
     </Container>
   );

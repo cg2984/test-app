@@ -5,7 +5,7 @@ class Header extends Component {
   render(props) {
     return(
       <header>
-      	<Link name={this.props.name} location={this.props.location}/>
+      	<Link classname={"link"} name={this.props.name} location={this.props.location}/>
       	<h1>{this.props.title}</h1>
       	{this.props.blurb}
       </header>

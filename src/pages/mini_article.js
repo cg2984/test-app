@@ -7,9 +7,12 @@ import "../article.css"
 import { SRLWrapper } from "simple-react-lightbox";
 import Header from "../components/header.js";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import Link from "../components/link.js";
+import Container from '@material-ui/core/Container';
 
 function MiniArticle() {
   const [data, setData] = useState("");
+  const [classname, setClassname] = useState("link");
   //setting up the url variables
   let id = ""; 
   let UrlId = "";
@@ -24,29 +27,28 @@ function MiniArticle() {
   useEffect(() => {
       axios.get(project_data)
     .then(function (response) {
-      console.log("response full", response);
-      console.log("response", response.data.images[0].url);
       setData(response.data);
+      console.log(response.data);
+      response.data.link === "null" ? setClassname("hidden") : setClassname("link");
+      console.log("link maybe", data.link);
     })
     .catch(function (error) {
       console.log(error);
     });
   //everytime the id changes the page reloads
-  },[project_data]);
-  console.log("data", data);
+  },[project_data, data.link]);
 
   
-  
-
   useEffect(() => {
     if(data){
     }
   },[data]);
+
     return (
-        <div className = "mini_article"> 
+        <Container maxWidth={"md"}>
           <Header
             title={data.name}
-            blurb={<p>{data.blurb}</p>}
+            blurb={<> <p>{data.blurb}</p> <Link classname = {classname} name="See the project site!" location={data.link}/></>}
             goals={data.goals}
             name={<ArrowBackIcon/>}
             location="/" 
@@ -60,7 +62,7 @@ function MiniArticle() {
               }
             </SRLWrapper>
           </main>
-        </div>
+        </Container>
     );
  }
 export default MiniArticle;

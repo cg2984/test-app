@@ -62,7 +62,7 @@ function Home() {
         <main className = "home">
           <Header 
             title="Hello! I'm Clara, a creative technologist based in NYC"
-            blurb={<Link name="Read more about me!" location ="/about"/>}
+            blurb={<Link classname={"link"} name="Read more about me!" location ="/about"/>}
           />
           <section className = "home">
               <nav>
@@ -84,7 +84,7 @@ function Home() {
                 <div className="projectLinkWrapper">
                   {data.map((item, i) => (
                     <ProjectLink
-                      key = {i.toString()}
+                      key = {i}
                       projectName = {data[i].name} 
                       projectDescription = {data[i].description} 
                       projectImage = {data[i].image} 
