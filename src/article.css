@@ -16,18 +16,12 @@
   scroll-behavior: smooth;
 }
 
-.article h2{
-  background: -webkit-linear-gradient(21deg, rgba(130,63,181,1), rgba(63,81,181,1), rgba(130,63,181,1));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .article_image{
-  width:98%;
+  width:80%;
   object-fit:cover;
-  margin:10px;
   max-height: 1000px;
   cursor:pointer;
+  margin:20px 0;
 } 
 
 .articleSection{

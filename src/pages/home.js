@@ -6,98 +6,78 @@ import Header from "../components/header.js";
 import Link from "../components/link.js";
 //material ui
 import LinearProgress from '@material-ui/core/LinearProgress';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Fade from '@material-ui/core/Fade';
 
 
 function Home() {
   const [data, setData] = useState(null);
   const [value, setValue] = useState(0);
-  const [urlParam, setUrlParam] = useState("");
   const [checked, setChecked] = useState(false);
 
   //i use url param to change the url for the API
-  var url = `https://tranquil-brushlands-15503.herokuapp.com/${urlParam}`;
-  
+  let urlStudies = `https://tranquil-brushlands-15503.herokuapp.com/`;
+  let urlProjects = `https://tranquil-brushlands-15503.herokuapp.com/mini`;
+
   //Getting the data from my backend
   useEffect(() => {
-    axios.get(url)
-    .then(function (response) {
-      setData(response.data);   
-    })
+    axios.all([
+      axios.get(urlStudies),
+      axios.get(urlProjects),
+    ])
+    .then(axios.spread((responseA, responseB) => {
+      setData([responseA.data, responseB.data])
+    }))
     .catch(function (error) {
       console.log(error);
     });
-  }, [urlParam, url]);
-
-  //changing the tabs and having those changes update the parameter in the url that gets the data
-  //also activating the slide in animation
-  useEffect(() => {
-    setChecked(false)
-    setTimeout(() => {
-      setChecked(true)
-    },500);
-    if(value===1){
-      setUrlParam("mini");
-    } 
-    if(value===0){
-      setUrlParam("");
-    }
-  }, [value]);
+  }, []);
 
   //making sure that the data is loaded. might be more elegant solution but I dont know it at the moment
   //theres a little animation there 
   if(data == null){
     return(
-        <div className = "loading"> 
-          <p>Loading</p>
-          <LinearProgress/> 
-        </div>
+      <div className = "loading"> 
+        <p>Loading</p>
+        <LinearProgress/> 
+      </div>
     );     
   }
-
   else{
-       return (
-        <main className = "home">
-          <Header 
-            title="Hello! I'm Clara, a creative technologist based in NYC"
-            blurb={<Link classname={"link"} name="Read more about me!" location ="/about"/>}
-          />
-          <section className = "home">
-              <nav>
-                <Tabs
-                  value={value}
-                  indicatorColor="primary"
-                  textColor="primary"
-                  aria-label="tabs_navigation"
-                  centered
-                >
-                  <Tab label="Case Studies" onClick={() => setValue(0)} className="tab"/>
-                  <Tab label="Experiments" onClick={() => setValue(1)} className="tab"/>
-                </Tabs>
-              </nav>
-              <Fade 
-                in={checked}
-                timeout = { 200 }
-              >
-                <div className="projectLinkWrapper">
-                  {data.map((item, i) => (
-                    <ProjectLink
-                      key = {i}
-                      projectName = {data[i].name} 
-                      projectDescription = {data[i].description} 
-                      projectImage = {data[i].image} 
-                      projectId = {data[i].id} 
-                      urlParam = {urlParam}
-                    />
-                  ))}
-                </div>
-              </Fade>
-          </section> 
-        </main>
-      ); 
-  }    
+    return (
+      <main className = "home">
+        <Header 
+          title="Hello! I'm Clara, a creative technologist based in NYC"
+          blurb={<Link classname={"link"} name="Read more about me!" location ="/about"/>}
+        />
+        <h2>Case Studies</h2>
+          <div className="projectLinkWrapper">
+            {data[0].map((item, i) => (
+              <ProjectLink
+                key = {i}
+                projectName = {data[0][i].name} 
+                projectDescription = {data[0][i].description} 
+                projectImage = {data[0][i].image} 
+                projectId = {data[0][i].id} 
+                urlParam = {""}
+              />
+            ))}
+          </div>
+        <h2>Experiments</h2>
+          <div className="projectLinkWrapper">
+            {data[1].map((item, i) => (
+              <ProjectLink
+                key = {i}
+                projectName = {data[1][i].name} 
+                projectDescription = {data[1][i].description} 
+                projectImage = {data[1][i].image} 
+                projectId = {data[1][i].id} 
+                urlParam = {"mini"}
+              />
+            ))}
+          </div>
+      </main>
+    ); 
+  }
+       
 }
 
 export default Home;

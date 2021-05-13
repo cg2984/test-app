@@ -18,7 +18,7 @@ class ProjectLink extends Component {
               title="Image of the project"
             />
             <CardContent>
-              <h2>{this.props.projectName}</h2>
+              <h3>{this.props.projectName}</h3>
               <p>{this.props.projectDescription}</p>
             </CardContent>
             <CardActions>

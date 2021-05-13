@@ -7,7 +7,7 @@
 }
 
 #root{
-  background-color:#fafafa;
+  background-color: #fafafa;
 }
 
 .App{
@@ -55,6 +55,15 @@ h1{
 h2{
   font-weight:bold;
   font-size: 35px;
+  font-family: 'Roboto', sans-serif;
+  font-weight:500;
+  margin:10px 0;
+  color:#051014;
+}
+
+h3{
+  font-weight:bold;
+  font-size: 24px;
   font-family: 'Roboto', sans-serif;
   font-weight:500;
   margin:10px 0;
@@ -109,11 +118,12 @@ nav{
 p{
   font-family: 'Roboto', sans-serif;
   font-weight:400;
-  font-size: 20px;
+  font-size: 18px;
   padding:0;
   margin:0px;
   line-height:30px;
   color:#051014;
+  white-space:pre-line;
 }
 
 
@@ -131,7 +141,7 @@ p{
 
 .projectLink{
   padding:20px;
-  margin:20px;
+  margin:20px 40px 20px 0;
   width:40%;
   display:flex;
   flex-direction:column;
@@ -142,4 +152,8 @@ p{
   display:flex;
   flex-direction:row;
   flex-wrap:wrap;
+  background-color: #fafafa;
+  opacity: 1;
+  background: radial-gradient(circle, transparent 20%, #fafafa 20%, #fafafa 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #fafafa 20%, #fafafa 80%, transparent 80%, transparent) 17.5px 17.5px, linear-gradient(#adb6e9 1.4000000000000001px, transparent 1.4000000000000001px) 0 -0.7000000000000001px, linear-gradient(90deg, #adb6e9 1.4000000000000001px, #fafafa 1.4000000000000001px) -0.7000000000000001px 0;
+  background-size: 35px 35px, 35px 35px, 17.5px 17.5px, 17.5px 17.5px;
 }

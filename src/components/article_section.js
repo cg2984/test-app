@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import Box from '@material-ui/core/Box';
 
-class Section extends Component {
+class ArticleSection extends Component {
   render(props) {
-    return( 
-      <span>
-    	   <h3 className = "section_title">{this.props.header}</h3>
-    	   <p>{this.props.body}</p>
-      </span>
+    return(
+    	<Box>
+    		<h3>{this.props.title}</h3>
+    		<p>{this.props.text}</p>
+    		<img className = "article_image" src = {this.props.image}/>
+    	</Box>
     )
     
   }
 }
-export default Section;
-
-
+export default ArticleSection;
