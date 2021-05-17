@@ -6,6 +6,7 @@ import Header from "../components/header.js";
 import Link from "../components/link.js";
 //material ui
 import LinearProgress from '@material-ui/core/LinearProgress';
+import Container from '@material-ui/core/Container';
 
 
 function Home() {
@@ -44,36 +45,40 @@ function Home() {
   else{
     return (
       <main className = "home">
-        <Header 
-          title="Hello! I'm Clara, a creative technologist based in NYC"
-          blurb={<Link classname={"link"} name="Read more about me!" location ="/about"/>}
-        />
-        <h2>Case Studies</h2>
-          <div className="projectLinkWrapper">
-            {data[0].map((item, i) => (
-              <ProjectLink
-                key = {i}
-                projectName = {data[0][i].name} 
-                projectDescription = {data[0][i].description} 
-                projectImage = {data[0][i].image} 
-                projectId = {data[0][i].id} 
-                urlParam = {""}
-              />
-            ))}
-          </div>
-        <h2>Experiments</h2>
-          <div className="projectLinkWrapper">
-            {data[1].map((item, i) => (
-              <ProjectLink
-                key = {i}
-                projectName = {data[1][i].name} 
-                projectDescription = {data[1][i].description} 
-                projectImage = {data[1][i].image} 
-                projectId = {data[1][i].id} 
-                urlParam = {"mini"}
-              />
-            ))}
-          </div>
+        <Container maxWidth={"md"}>
+          <Header 
+            title="Hello! I'm Clara, a creative technologist based in NYC"
+            blurb={<Link classname={"link"} name="Read more about me!" location ="/about"/>}
+          />
+          <h2>CASE STUDIES</h2>
+            <div className="patternBar"></div>
+            <div className="projectLinkWrapper">
+              {data[0].map((item, i) => (
+                <ProjectLink
+                  key = {i}
+                  projectName = {data[0][i].name} 
+                  projectDescription = {data[0][i].description} 
+                  projectImage = {data[0][i].image} 
+                  projectId = {data[0][i].id} 
+                  urlParam = {""}
+                />
+              ))}
+            </div>
+          <h2>EXPERIMENTS</h2>
+            <div className="patternBar"></div>   
+            <div className="projectLinkWrapper">
+              {data[1].map((item, i) => (
+                <ProjectLink
+                  key = {i}
+                  projectName = {data[1][i].name} 
+                  projectDescription = {data[1][i].description} 
+                  projectImage = {data[1][i].image} 
+                  projectId = {data[1][i].id} 
+                  urlParam = {"mini"}
+                />
+              ))}
+            </div>
+        </Container>
       </main>
     ); 
   }
