@@ -49,14 +49,18 @@ function Article() {
       <Container maxWidth={"md"}>
         <Header
           title={data.Name}
-          blurb={<> <p>{data.Overview}</p> <Link classname = {classname} name="See the project site!" location={data.projectLink}/></>}
-          goals={data.goals}
+          blurb={<Link classname = {classname} name="See the project site!" location={data.projectLink}/>}
           name={<ArrowBackIcon/>}
           location="/" 
           id="top"
         />
       </Container>
       <Container Container maxWidth={"md"}>
+        <ArticleSection
+          title = {"Project Overview"}
+          text = {data.Overview}
+          image = {data.Final == undefined ? "https://i.stack.imgur.com/y9DpT.jpg" : data.Final[0].url}
+        />,
         <ArticleSection
           title = {data.Section1Title}
           text = {data.Section1}
