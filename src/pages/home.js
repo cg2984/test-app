@@ -47,7 +47,7 @@ function Home() {
       <main className = "home">
         <Container maxWidth={"md"}>
           <Header 
-            title="Hello! I'm Clara, a creative technologist based in NYC"
+            title="Hello! I'm Clara, a designer based in NYC"
             blurb={<Link classname={"link"} name="Read more about me!" location ="/about"/>}
           />
           <h2>CASE STUDIES</h2>
