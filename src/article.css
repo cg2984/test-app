@@ -57,6 +57,19 @@
   margin:29.5px;
 }
 
+.landing img{
+  width: 100%;
+  height: 100%;
+  margin: 20px 0;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.landing h3{
+  line-height: 40px;
+  font-weight: normal;
+}
+
 .mini_article{
   display:flex;
   flex-direction:column;
@@ -92,7 +105,24 @@
 }
 
 .outcomes{
-  padding: 100px;
+  margin: 50px 5px;
+  display: flex;
+  flex-direction: row;
+  background-color: #fafafa;
+  width: 100%;
+}
+
+.outcomes img{
+  border-radius: 50px;
+  object-fit: cover;
+  width: 400px;
+  height: 400px;
+  margin: 20px;
+  cursor: pointer;
+  box-shadow: 
+    0 3px 5px rgba(0,0,0, .20),
+    0 12px 10px rgba(0, 0, 0, .10),
+    0 20px 40px rgba(0, 0, 0, .05);
 }
 
 .outcomes p{

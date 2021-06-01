@@ -10,8 +10,8 @@ import Link from "../components/link.js";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
-import { SRLWrapper } from "simple-react-lightbox";
 import Container from '@material-ui/core/Container';
+import { SRLWrapper } from "simple-react-lightbox";
 
 function Article() {
   const [data, setData] = useState([]);
@@ -46,7 +46,7 @@ function Article() {
 
   return (
     <div className="article">
-      <Container maxWidth={"md"}>
+      <Container className="landing" maxWidth={"md"}>
         <Header
           title={data.Name}
           blurb={<Link classname = {classname} name="See the project site!" location={data.projectLink}/>}
@@ -54,18 +54,22 @@ function Article() {
           location="/" 
           id="top"
         />
+        <h3>{data.Overview}</h3>        
+        <Box className="outcomes">
+          <SRLWrapper>
+            <img src = {data.Final == undefined ? "https://i.stack.imgur.com/y9DpT.jpg" : data.Final[0].url}/>
+          </SRLWrapper>
+          <Box>
+            <h3>Project Outcomes</h3>
+            <p>{data.Outcomes}</p>   
+          </Box>  
+        </Box>
+        <SRLWrapper>
+          <img src = {data.Final2 == undefined ? "https://i.stack.imgur.com/y9DpT.jpg" : data.Final2[0].url}/>
+        </SRLWrapper>
         <div className="patternBar"></div>
       </Container>
       <Container Container maxWidth={"md"}>
-        <ArticleSection
-          title = {"Project Overview"}
-          text = {data.Overview}
-          image = {data.Final == undefined ? "https://i.stack.imgur.com/y9DpT.jpg" : data.Final[0].url}
-        />
-        <Box className="outcomes">
-          <h3>Project Outcomes</h3>
-          <p>{data.Outcomes}</p>
-        </Box>
         <ArticleSection
           title = {data.Section1Title}
           text = {data.Section1}
