@@ -91,6 +91,21 @@
   cursor:pointer;
 }
 
+.outcomes{
+  padding: 100px;
+}
+
+.outcomes p{
+  font-size: 36px;
+  background: -webkit-linear-gradient(21deg, rgba(130,63,181,1), rgba(63,81,181,1), rgba(130,63,181,1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  line-height: 48px;
+  border-left: 2px solid #051014;
+  padding: 20px;
+}
+
 .stepper{
   width:100%;
   background-color:white;

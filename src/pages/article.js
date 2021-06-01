@@ -54,23 +54,28 @@ function Article() {
           location="/" 
           id="top"
         />
+        <div className="patternBar"></div>
       </Container>
       <Container Container maxWidth={"md"}>
         <ArticleSection
           title = {"Project Overview"}
           text = {data.Overview}
           image = {data.Final == undefined ? "https://i.stack.imgur.com/y9DpT.jpg" : data.Final[0].url}
-        />,
+        />
+        <Box className="outcomes">
+          <h3>Project Outcomes</h3>
+          <p>{data.Outcomes}</p>
+        </Box>
         <ArticleSection
           title = {data.Section1Title}
           text = {data.Section1}
           image = {data.Section1Image == undefined ? "https://i.stack.imgur.com/y9DpT.jpg" : data.Section1Image[0].url}
-        />,
+        />
         <ArticleSection
           title = {data.Section2Title}
           text = {data.Section2}
           image = {data.Section2Image == undefined ? "https://i.stack.imgur.com/y9DpT.jpg" : data.Section2Image[0].url}
-        />,
+        />
         <ArticleSection
           title = {data.Section3Title}
           text = {data.Section3}
