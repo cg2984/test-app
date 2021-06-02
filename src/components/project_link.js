@@ -9,25 +9,24 @@ import { motion } from "framer-motion";
 class ProjectLink extends Component {
   render(props) {
     return(
-      <Card className="projectLink" variant="outlined">
-        <CardMedia
-          component="img"
-          alt="projectImg"
-          height="250px"
-          image={this.props.projectImage}
-          title="Image of the project"
-        />
-        <CardContent>
-          <h3>{this.props.projectName}</h3>
-          <p>{this.props.projectDescription}</p>
-        </CardContent>
-        <CardActions>
-          {
-            this.props.urlParam === "" 
-            ? <motion.div whileTap={{ scale: 0.95 }}><Button size="large" variant="contained" color="primary" href={`/project/${this.props.projectId}`}>Read the case study</Button></motion.div>
-            : <motion.div whileTap={{ scale: 0.95 }}><Button size="large" variant="contained" color="primary" href={`/miniproject/${this.props.projectId}`}>See more</Button></motion.div>
-          }
-        </CardActions>
+      <Card className="projectLink" variant="outlined">      
+          <CardMedia
+            component="img"
+            alt="projectImg"
+            image={this.props.projectImage}
+            title="Image of the project"
+            height="300px"
+          />
+          <CardContent className = "content"> 
+            <h3>{this.props.projectName}</h3>  
+            <CardActions>
+            {
+              this.props.urlParam === "" 
+              ? <motion.div whileTap={{ scale: 0.95 }}><Button size="large" variant="contained" color="primary" href={`/project/${this.props.projectId}`}>Read the case study</Button></motion.div>
+              : <motion.div whileTap={{ scale: 0.95 }}><Button size="large" variant="contained" color="primary" href={`/miniproject/${this.props.projectId}`}>See more</Button></motion.div>
+            }
+            </CardActions>
+          </CardContent>
       </Card>   
     )  
   }

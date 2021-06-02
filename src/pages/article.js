@@ -54,7 +54,7 @@ function Article() {
           location="/" 
           id="top"
         />
-        <h3>{data.Overview}</h3>        
+        <p>{data.Overview}</p>        
         <Box className="outcomes">
           <SRLWrapper>
             <img src = {data.Final == undefined ? "https://i.stack.imgur.com/y9DpT.jpg" : data.Final[0].url}/>
@@ -67,7 +67,6 @@ function Article() {
         <SRLWrapper>
           <img src = {data.Final2 == undefined ? "https://i.stack.imgur.com/y9DpT.jpg" : data.Final2[0].url}/>
         </SRLWrapper>
-        <div className="patternBar"></div>
       </Container>
       <Container Container maxWidth={"md"}>
         <ArticleSection

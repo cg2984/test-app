@@ -50,8 +50,7 @@ function Home() {
             title="Hello! I'm Clara, a designer based in NYC"
             blurb={<Link classname={"link"} name="Read more about me!" location ="/about"/>}
           />
-          <h2>CASE STUDIES</h2>
-            <div className="patternBar"></div>
+          <h2>CASE STUDIES</h2>  
             <div className="projectLinkWrapper">
               {data[0].map((item, i) => (
                 <ProjectLink
@@ -64,8 +63,7 @@ function Home() {
                 />
               ))}
             </div>
-          <h2>EXPERIMENTS</h2>
-            <div className="patternBar"></div>   
+          <h2>EXPERIMENTS</h2>  
             <div className="projectLinkWrapper">
               {data[1].map((item, i) => (
                 <ProjectLink
