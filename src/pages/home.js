@@ -79,7 +79,7 @@ function Home() {
             </div>
         </Container>
         <footer>
-          <Button size="large" variant="outlined" color="primary" href={`mailto:clara.c.gilligan@gmail.com`}>Email Me</Button>
+          <Button size="large" variant="outlined" color="primary" href={`/about`}>Contact Me</Button>
         </footer>
       </main>
     ); 
