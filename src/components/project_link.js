@@ -18,7 +18,8 @@ class ProjectLink extends Component {
             height="300px"
           />
           <CardContent className = "content"> 
-            <h3>{this.props.projectName}</h3>  
+            <h3>{this.props.projectType}</h3>
+            <h4>{this.props.projectName}</h4>  
             <CardActions>
             {
               this.props.urlParam === "" 

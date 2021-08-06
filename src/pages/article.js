@@ -88,9 +88,11 @@ function Article() {
       <Container maxWidth={"md"}>
         <h3>More Project Images</h3>
         <Box>
-          {imageArray.map((i) =>
-            <img className = "article_image" src={i.url}/>
-          )}
+          <SRLWrapper>
+            {imageArray.map((i) =>
+              <img className = "article_image" src={i.url}/>
+            )}
+          </SRLWrapper>
         </Box>
       </Container>
       <footer className = "article_footer">

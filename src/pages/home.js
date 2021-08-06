@@ -7,6 +7,7 @@ import Link from "../components/link.js";
 //material ui
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Container from '@material-ui/core/Container';
+import Button from '@material-ui/core/Button';
 
 
 function Home() {
@@ -48,9 +49,9 @@ function Home() {
         <Container maxWidth={"md"}>
           <Header 
             title="Hello! I'm Clara, a designer based in NYC"
-            blurb={<Link classname={"link"} name="Read more about me!" location ="/about"/>}
+            blurb={<Button size="large" variant="outlined" color="primary" href={`/about`}>Read more about me</Button>}
           />
-          <h2>CASE STUDIES</h2>  
+          <h2>Case Studies & Projects</h2>  
             <div className="projectLinkWrapper">
               {data[0].map((item, i) => (
                 <ProjectLink
@@ -63,7 +64,7 @@ function Home() {
                 />
               ))}
             </div>
-          <h2>EXPERIMENTS</h2>  
+          <h2>Experiments</h2>  
             <div className="projectLinkWrapper">
               {data[1].map((item, i) => (
                 <ProjectLink
@@ -77,6 +78,9 @@ function Home() {
               ))}
             </div>
         </Container>
+        <footer>
+          <Button size="large" variant="outlined" color="primary" href={`/about`}>Contact Me</Button>
+        </footer>
       </main>
     ); 
   }

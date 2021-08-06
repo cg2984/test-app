@@ -91,8 +91,8 @@ footer{
 
 h1{
   font-family: 'Roboto', sans-serif;
-  font-weight:700;
-  font-size: 45px;
+  font-weight:400;
+  font-size: 4em;
   background: -webkit-linear-gradient(21deg, rgba(130,63,181,1), rgba(63,81,181,1), rgba(130,63,181,1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -100,20 +100,28 @@ h1{
 }
 
 h2{
-  font-size: 35px;
+  font-size: 2.75em;
   font-family: 'Roboto', sans-serif;
-  font-weight:700;
+  font-weight:400;
   margin:20px 0;
   color:#3f51b5;
   text-shadow:2px 2px 1px #fafafa;
 }
 
 h3{
-  font-weight:bold;
-  font-size: 30px;
-  line-height: 46px;
+  font-size: 1.75em;
+  line-height: 1.5em;
   font-family: 'Roboto', sans-serif;
   font-weight:500;
+  margin:10px 0;
+  color: #051014;
+}
+
+h4{
+  font-size: 1.5em;
+  line-height: 1.5em;
+  font-family: 'Roboto', sans-serif;
+  font-weight:400;
   margin:10px 0;
   color: #051014;
 }
