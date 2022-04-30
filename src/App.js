@@ -3,6 +3,7 @@ import Home from "./pages/home.js";
 import Article from "./pages/article.js";
 import MiniArticle from "./pages/mini_article.js";
 import About from "./pages/about.js";
+
 import './App.css';
 import {
   BrowserRouter as Router,

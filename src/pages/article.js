@@ -46,7 +46,7 @@ function Article() {
 
   return (
     <div className="article">
-      <Container className="landing" maxWidth={"md"}>
+      <Container maxWidth={"md"}>
         <Header
           title={data.Name}
           blurb={<Link classname = {classname} name="See the project site!" location={data.projectLink}/>}
@@ -54,18 +54,18 @@ function Article() {
           location="/" 
           id="top"
         />
-        <p>{data.Overview}</p>        
+        <p class="text">{data.Overview}</p>  
+        <h3 class="h2">Project Outcomes</h3>      
         <Box className="outcomes">
           <SRLWrapper>
             <img src = {data.Final == undefined ? "https://i.stack.imgur.com/y9DpT.jpg" : data.Final[0].url}/>
           </SRLWrapper>
           <Box>
-            <h3>Project Outcomes</h3>
             <p>{data.Outcomes}</p>   
           </Box>  
         </Box>
         <SRLWrapper>
-          <img src = {data.Final2 == undefined ? "https://i.stack.imgur.com/y9DpT.jpg" : data.Final2[0].url}/>
+          <img className = "article_image" src = {data.Final2 == undefined ? "https://i.stack.imgur.com/y9DpT.jpg" : data.Final2[0].url}/>
         </SRLWrapper>
       </Container>
       <Container Container maxWidth={"md"}>
@@ -86,7 +86,7 @@ function Article() {
         />
       </Container>
       <Container maxWidth={"md"}>
-        <h3>More Project Images</h3>
+        <h3 class="h3">More Project Images</h3>
         <Box>
           <SRLWrapper>
             {imageArray.map((i) =>

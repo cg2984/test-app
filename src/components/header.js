@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import Link from "../components/link.js";
+import Container from '@material-ui/core/Container';
 
 class Header extends Component {
   render(props) {
     return(
       <header>
-      	<Link classname={"link"} name={this.props.name} location={this.props.location}/>
-      	<h1>{this.props.title}</h1>
-      	{this.props.blurb}
+        <Link classname={"link"} name={this.props.name} location={this.props.location}/>
+        <h1>{this.props.title}</h1>
+        {this.props.blurb}
       </header>
     )
     

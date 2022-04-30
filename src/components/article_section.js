@@ -6,8 +6,8 @@ class ArticleSection extends Component {
   render(props) {
     return(
     	<Box>
-    		<h2>{this.props.title}</h2>
-    		<p>{this.props.text}</p>
+    		<h2 class="h2">{this.props.title}</h2>
+    		<p class="text">{this.props.text}</p>
         <SRLWrapper>
     		  <img className = "article_image" src = {this.props.image}/>
         </SRLWrapper>

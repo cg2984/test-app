@@ -1,0 +1,32 @@
+/* FLEX LAYOUTS */
+
+.flex-start{
+    display:flex;
+    flex-direction: column;
+    align-items:start;
+    margin:20px 0 40px 0;
+}
+
+/* SPACERS */
+
+.y-1{
+    margin:5px 0;
+}
+
+.y-2{
+    margin:10px 0;
+}
+
+.y-3{
+    margin:20px 0;
+}
+
+.y-4{
+    margin:40px 0;
+}
+
+.y-5{
+    margin:60px 0;
+}
+
+

@@ -49,10 +49,10 @@ function Home() {
         <Container maxWidth={"md"}>
           <Header 
             title="Hello! I'm Clara, a designer based in NYC"
-            blurb={<Button size="large" variant="outlined" color="primary" href={`/about`}>Read more about me</Button>}
+            blurb={<Button size="large" variant="contained" color="primary" href={`/about`}  disableElevation>Read more about me</Button>}
           />
-          <h2>Case Studies & Projects</h2>  
-            <div className="projectLinkWrapper">
+          <h2 className="h2">Case Studies & Projects</h2>  
+            <div className="flex-start">
               {data[0].map((item, i) => (
                 <ProjectLink
                   key = {i}
@@ -65,7 +65,7 @@ function Home() {
               ))}
             </div>
           <h2>Experiments</h2>  
-            <div className="projectLinkWrapper">
+            <div className="flex-start">
               {data[1].map((item, i) => (
                 <ProjectLink
                   key = {i}

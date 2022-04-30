@@ -1,84 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@keyframes hover {
-  0%{
-    box-shadow:
-      -3px 3px 5px rgba(212, 18, 255, 0.4),
-      3px -3px 5px rgba(40, 32, 250, 0.4),
-      0px 0px 40px rgba(46, 231, 255, 0.5),
-      0 12px 10px rgba(0, 0, 0, .10),
-      0 20px 40px rgba(0, 0, 0, .05)
-    ;
-  }
-  50%{
-    box-shadow:
-      -3px 3px 5px rgba(212, 18, 255, 0.2),
-      3px -3px 5px rgba(40, 32, 250, 0.2),
-      0px 0px 40px rgba(46, 231, 255, 0.5),
-      0 12px 10px rgba(0, 0, 0, .10),
-      0 20px 40px rgba(0, 0, 0, .05)
-    ;
-  }
-  75%{
-    box-shadow:
-      -3px 3px 5px rgba(212, 18, 255, 0.1),
-      3px -3px 5px rgba(40, 32, 250, 0.1),
-      0px 0px 40px rgba(46, 231, 255, 0.5),
-      0 12px 10px rgba(0, 0, 0, .10),
-      0 20px 40px rgba(0, 0, 0, .05)
-    ;
-  } 
-  100% {
-    box-shadow:
-      0px 0px 40px rgba(46, 231, 255, 0.5),
-      0 12px 10px rgba(0, 0, 0, .10),
-      0 20px 40px rgba(0, 0, 0, .05)
-    ;
-  }
-}
-
-@keyframes hoverLink{
-  0%{
-    border-bottom:1px solid #fafafa;
-  }
-  30%{
-    border-bottom:1px solid #fafafa;
-  }
-  100%{
-    border-bottom:1px dashed #3f51b5;
-  }
-}
-#root{
-  background-color: #fafafa;
-}
+/* CSS IMPORTS */
+@import './base.css';
+@import './typography.css';
+@import './layouts.css';
 
 .App{
   display:flex;
   flex-direction:column;
   overflow:visible;
-  background-color: #fafafa;
-  opacity: 1;
-  background-image: radial-gradient(#edeff8 1px, #fafafa 1px);
-  background-size: 20px 20px;;
-}
-
-.link{
-  font-family: 'Roboto', sans-serif;
-  font-weight:400;
-  font-size: 48px;
-  color:#3f51b5;
-  text-decoration: none;
-  font-size: 20px;
-  margin:10px 0 10px 0;
-  width:fit-content;
-  border-bottom:1px solid #fafafa;
-}
-
-.link:hover{
-  animation-name: hoverLink;
-  animation-duration: 0.75s;
-  animation-direction: normal;
-  animation-iteration-count: 1;
-  animation-fill-mode: both;
 }
 
 footer{
@@ -89,57 +17,13 @@ footer{
   align-items:center;
 }
 
-h1{
-  font-family: 'Roboto', sans-serif;
-  font-weight:400;
-  font-size: 4em;
-  background: -webkit-linear-gradient(21deg, rgba(130,63,181,1), rgba(63,81,181,1), rgba(130,63,181,1));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin:0;
-}
-
-h2{
-  font-size: 2.75em;
-  font-family: 'Roboto', sans-serif;
-  font-weight:400;
-  margin:20px 0;
-  color:#3f51b5;
-  text-shadow:2px 2px 1px #fafafa;
-}
-
-h3{
-  font-size: 1.75em;
-  line-height: 1.5em;
-  font-family: 'Roboto', sans-serif;
-  font-weight:500;
-  margin:10px 0;
-  color: #051014;
-}
-
-h4{
-  font-size: 1.5em;
-  line-height: 1.5em;
-  font-family: 'Roboto', sans-serif;
-  font-weight:400;
-  margin:10px 0;
-  color: #051014;
-}
-
 header{
-  margin:10% 0;
   display:flex;
   flex-direction:column;
   align-items:flex-start;
   justify-content:center;
 }
 
-header h1{
-  margin:10px 0;
-  background: -webkit-linear-gradient(21deg, rgba(130,63,181,1), rgba(63,81,181,1), rgba(130,63,181,1));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 header p{
   margin:10px 0;
   color:#051014;
@@ -167,21 +51,6 @@ nav{
   background-color: #fafafa;
 }
 
-p{
-  font-family: 'Roboto', sans-serif;
-  font-weight:400;
-  font-size: 18px;
-  padding:0;
-  margin:0px;
-  line-height:30px;
-  color:#051014;
-  white-space:pre-line;
-}
-
-
-.tabs{
-  color:red;
-}
 /*------------------------------HOME PAGE PROJECT STYLING*/
 
 .home{
@@ -203,37 +72,19 @@ background-image: linear-gradient(to right, #fae292, #fae292 4.5px, #fafafa 4.5p
 background-size: 9px 100%;
 }
 
-.projectLink{
-  box-shadow:
-    0 3px 5px rgba(0,0,0, .20),
-    0 12px 10px rgba(0, 0, 0, .10),
-    0 20px 40px rgba(0, 0, 0, .05)
-  ;
-  display:grid;
-  grid-template-rows:300px 1fr auto;
-  gap: 10px;
-  align-items: center;
-  justify-items: center;
-}
-.projectLink h3{
-  padding: 8px;
+.project-icon{
+  background: url(https://img.icons8.com/material/24/000000/squiggly-arrow.png);
+  background-repeat: no-repeat;
+  background-position:left;
+  background-size:0px;
+  transition:background-size ease-in 0.2s;
 }
 
-.projectLink .content{
-  padding: 5px 40px;
+.project-icon:hover{
+  background-position:left;
+  background-size:24px;
 }
 
-.projectLink:hover{
-  animation-name: hover;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-.projectLinkWrapper{
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:40px;
-  max-width:960px;
-  margin-bottom:100px;
+.project-icon:hover{
+  width:100%;
 }
